@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-const base = "astro_dart";
 ---
 
 <BaseLayout>
@@ -8,7 +7,7 @@ const base = "astro_dart";
     <div class="header" data-component='{"component": "header"}'>
       <div class="header__logo">
         <a href="./">
-          <img class="" src="assets/images/logo.svg" alt="" />
+          <img class="" src="./assets/images/logo.svg" alt="" />
         </a>
       </div>
       <nav class="header__menu">
@@ -17,7 +16,7 @@ const base = "astro_dart";
         </div>
 
         <div class="header__menu__item">
-          <a class="hover-slide hover-slide--nano" href="{base}/services.html"
+          <a class="hover-slide hover-slide--nano" href="./services.html"
             >Services</a
           >
         </div>
