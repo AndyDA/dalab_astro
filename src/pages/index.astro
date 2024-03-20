@@ -1,220 +1,44 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+
+import air from "../images/clients/Air.svg";
+import cricova from "../images/clients/Cricova.svg";
+import ec from "../images/clients/EC.svg";
+import gatx from "../images/clients/GATX.svg";
+import greenfibra from "../images/clients/Greenfibra.svg";
+import hra from "../images/clients/HRA.svg";
+import osce from "../images/clients/OSCE.svg";
+import otta from "../images/clients/Otta.svg";
+import redbull from "../images/clients/Redbull.svg";
+import ses from "../images/clients/SES.svg";
+import signmesh from "../images/clients/Signmesh.svg";
+import tupperwave from "../images/clients/Tupperware.svg";
 ---
 
 <BaseLayout>
-  <div class="page">
-    <div class="header" data-component='{"component": "header"}'>
-      <div class="header__logo">
-        <a href="./">
-          <img class="" src="/astro_dart/assets/images/logo.svg" alt="" />
-        </a>
-      </div>
-      <nav class="header__menu">
-        <div class="header__menu__item">
-          <a class="hover-slide hover-slide--nano" href="/astro_dart/about"
-            >About</a
-          >
-        </div>
-
-        <div class="header__menu__item">
-          <a class="hover-slide hover-slide--nano" href="/astro_dart/services"
-            >Services</a
-          >
-        </div>
-
-        <div class="header__menu__item">
-          <a class="hover-slide hover-slide--nano" href="/astro_dart/work"
-            >Work</a
-          >
-        </div>
-
-        <div class="header__menu__item">
-          <a
-            class="hover-slide hover-slide--nano"
-            href="/astro_dart/careers.html">Careers</a
-          >
-        </div>
-
-        <div class="header__menu__item">
-          <a
-            class="hover-slide hover-slide--nano"
-            href="/astro_dart/contact.html">Contact</a
-          >
-        </div>
-      </nav>
+  <div class="hero container mx-auto">
+    <div class="hero__title">
+      <h1 class="hero__title__display font-semibold">
+        What he do? What he does?
+      </h1>
     </div>
-
-    <div class="hero container mx-auto">
-      <div class="hero__title">
-        <h1 class="hero__title__display font-semibold">
-          What he do? What he does?
-        </h1>
-      </div>
-      <div class="hero__buttons">
-        <a
-          href="/work.html"
-          class="button button--style--primary button--size--regular"
-        >
-          <div class="button__inner">
-            <div class="button__label">See our work</div>
-          </div>
-        </a>
-
-        <a
-          href="/contact.html"
-          class="button button--style--secondary button--size--regular"
-        >
-          <div class="button__inner">
-            <div class="button__label">Contact us</div>
-
-            <div class="button__icon">
-              <div class="icon">
-                <i class="bx bx-right-arrow-alt"></i>
-              </div>
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
-
-    <div class="work-display container mx-auto">
-      <div class="work work-full">
-        <div class="work__image">
-          <a href="">
-            <img
-              class="lazyload"
-              data-sizes="auto"
-              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkZlD/DwABYwErWwRBvQAAAABJRU5ErkJggg=="
-              data-src="https://source.unsplash.com/random"
-              alt=""
-            />
-          </a>
-        </div>
-        <div class="work__title">
-          <a href="">
-            <span>Project Title</span>
-          </a>
-        </div>
-      </div>
-
-      <div class="work work-4">
-        <div class="work__image">
-          <a href="">
-            <img
-              class="lazyload"
-              data-sizes="auto"
-              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkZlD/DwABYwErWwRBvQAAAABJRU5ErkJggg=="
-              data-src="https://source.unsplash.com/900x1200"
-              alt=""
-            />
-          </a>
-        </div>
-        <div class="work__title">
-          <a href="">
-            <span>Project Title</span>
-          </a>
-        </div>
-      </div>
-
-      <div class="work work-5">
-        <div class="work__image">
-          <a href="">
-            <img
-              class="lazyload"
-              data-sizes="auto"
-              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkZlD/DwABYwErWwRBvQAAAABJRU5ErkJggg=="
-              data-src="https://source.unsplash.com/1600x900"
-              alt=""
-            />
-          </a>
-        </div>
-        <div class="work__title">
-          <a href="">
-            <span>Project Title</span>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="display-text container mx-auto">
-      <div>
-        Dart Studio is a hard-working, innovative marketing agency that
-        accelerates growth for good companies.<br />
-        <br />We build brands through strategy, design, digital experiences, and
-        marketing. If you want to plant seeds of success and watch them grow,
-        you’re in the right spot.
-      </div>
-    </div>
-
-    <div class="work-display container mx-auto">
-      <div class="work work-full">
-        <div class="work__image">
-          <a href="">
-            <img
-              class="lazyload"
-              data-sizes="auto"
-              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkZlD/DwABYwErWwRBvQAAAABJRU5ErkJggg=="
-              data-src="https://source.unsplash.com/random"
-              alt=""
-            />
-          </a>
-        </div>
-        <div class="work__title">
-          <a href="">
-            <span>Project Title</span>
-          </a>
-        </div>
-      </div>
-
-      <div class="work work-4">
-        <div class="work__image">
-          <a href="">
-            <img
-              class="lazyload"
-              data-sizes="auto"
-              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkZlD/DwABYwErWwRBvQAAAABJRU5ErkJggg=="
-              data-src="https://source.unsplash.com/900x1200"
-              alt=""
-            />
-          </a>
-        </div>
-        <div class="work__title">
-          <a href="">
-            <span>Project Title</span>
-          </a>
-        </div>
-      </div>
-
-      <div class="work work-5">
-        <div class="work__image">
-          <a href="">
-            <img
-              class="lazyload"
-              data-sizes="auto"
-              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkZlD/DwABYwErWwRBvQAAAABJRU5ErkJggg=="
-              data-src="https://source.unsplash.com/1600x900"
-              alt=""
-            />
-          </a>
-        </div>
-        <div class="work__title">
-          <a href="">
-            <span>Project Title</span>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div
-      class="container mx-auto work-display-cta flex justify-center mt-24 mb-28"
-    >
+    <div class="hero__buttons">
       <a
-        href="works.html"
-        class="button button--style--secondary button--size--large"
+        href="/work"
+        class="button button--style--primary button--size--regular"
       >
         <div class="button__inner">
-          <div class="button__label">I wanna see more</div>
+          <div class="button__label">See our work</div>
+        </div>
+      </a>
+
+      <a
+        href="/contact"
+        class="button button--style--secondary button--size--regular"
+      >
+        <div class="button__inner">
+          <div class="button__label">Contact us</div>
 
           <div class="button__icon">
             <div class="icon">
@@ -224,119 +48,201 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </div>
       </a>
     </div>
-    <div class="clients" data-component='{"component": "scroller"}'>
-      <ul class="clients__inner">
-        <li>
-          <img class="" src="assets/images/clients/Tupperware.svg" alt="" />
-        </li>
+  </div>
 
-        <li>
-          <img class="" src="assets/images/clients/GATX.svg" alt="" />
-        </li>
-
-        <li>
-          <img class="" src="assets/images/clients/Redbull.svg" alt="" />
-        </li>
-
-        <li>
-          <img class="" src="assets/images/clients/HRA.svg" alt="" />
-        </li>
-
-        <li>
-          <img class="" src="assets/images/clients/OSCE.svg" alt="" />
-        </li>
-
-        <li>
-          <img class="" src="assets/images/clients/Otta.svg" alt="" />
-        </li>
-
-        <li>
-          <img class="" src="assets/images/clients/SES.svg" alt="" />
-        </li>
-
-        <li>
-          <img class="" src="assets/images/clients/Air.svg" alt="" />
-        </li>
-
-        <li>
-          <img class="" src="assets/images/clients/EC.svg" alt="" />
-        </li>
-
-        <li>
-          <img class="" src="assets/images/clients/Greenfibra.svg" alt="" />
-        </li>
-
-        <li>
-          <img class="" src="assets/images/clients/Signmesh.svg" alt="" />
-        </li>
-
-        <li>
-          <img class="" src="assets/images/clients/Cricova.svg" alt="" />
-        </li>
-      </ul>
-    </div>
-
-    <div class="footer">
-      <div class="footer__inner container mx-auto">
-        <div class="footer__upper">
-          <div class="footer__cta">
-            <div
-              data-component='{"component": "catchphrase"}'
-              data-array="Have a project in mind?,Sounds good?,Want something similar?,Anything caught your eye?,Interested to collaborate?,Interested in working with us?,Ready to start a project?,If you're excited — we're excited."
-            >
-            </div>
-            Let's <a class="hover-slide" href="mailto:">get in touch!</a>
-          </div>
-          <nav class="footer__menu">
-            <span><a class="hover-slide" href="#" target="">Home</a></span>
-
-            <span
-              ><a class="hover-slide" href="./about.html" target="">About</a
-              ></span
-            >
-
-            <span
-              ><a class="hover-slide" href="/services.html" target=""
-                >Services</a
-              ></span
-            >
-
-            <span
-              ><a class="hover-slide" href="./work.html" target="">Work</a
-              ></span
-            >
-
-            <span
-              ><a class="hover-slide" href="./contact.html" target="">Contact</a
-              ></span
-            >
-
-            <span
-              ><a class="hover-slide" href="./careers.html" target="">Careers</a
-              ></span
-            >
-          </nav>
-        </div>
-        <div class="footer__lower">
-          <div class="flex">
-            <span>&copy; Dart Studio 2024</span>
-            <nav>
-              <a href="./privacy.html" target="">Privacy Policy</a>
-
-              <a href="#" target="">Sitemap</a>
-
-              <a href="./accessibility.html" target="">Accessibility</a>
-            </nav>
-          </div>
-          <nav>
-            <a href="#" target="">Facebook</a>
-
-            <a href="#" target="">X (formerly known as Twitter)</a>
-
-            <a href="" target="">LinkedIn</a>
-          </nav>
-        </div>
+  <div class="work-display container mx-auto">
+    <div class="work work-full">
+      <div class="work__image">
+        <a href="">
+          <img
+            class="lazyload"
+            data-sizes="auto"
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkZlD/DwABYwErWwRBvQAAAABJRU5ErkJggg=="
+            data-src="https://source.unsplash.com/random"
+            alt=""
+          />
+        </a>
+      </div>
+      <div class="work__title">
+        <a href="">
+          <span>Project Title</span>
+        </a>
       </div>
     </div>
+
+    <div class="work work-4">
+      <div class="work__image">
+        <a href="">
+          <img
+            class="lazyload"
+            data-sizes="auto"
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkZlD/DwABYwErWwRBvQAAAABJRU5ErkJggg=="
+            data-src="https://source.unsplash.com/900x1200"
+            alt=""
+          />
+        </a>
+      </div>
+      <div class="work__title">
+        <a href="">
+          <span>Project Title</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="work work-5">
+      <div class="work__image">
+        <a href="">
+          <img
+            class="lazyload"
+            data-sizes="auto"
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkZlD/DwABYwErWwRBvQAAAABJRU5ErkJggg=="
+            data-src="https://source.unsplash.com/1600x900"
+            alt=""
+          />
+        </a>
+      </div>
+      <div class="work__title">
+        <a href="">
+          <span>Project Title</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="display-text container mx-auto">
+    <div>
+      Dart Studio is a hard-working, innovative marketing agency that
+      accelerates growth for good companies.<br />
+      <br />We build brands through strategy, design, digital experiences, and
+      marketing. If you want to plant seeds of success and watch them grow,
+      you’re in the right spot.
+    </div>
+  </div>
+
+  <div class="work-display container mx-auto">
+    <div class="work work-full">
+      <div class="work__image">
+        <a href="">
+          <img
+            class="lazyload"
+            data-sizes="auto"
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkZlD/DwABYwErWwRBvQAAAABJRU5ErkJggg=="
+            data-src="https://source.unsplash.com/random"
+            alt=""
+          />
+        </a>
+      </div>
+      <div class="work__title">
+        <a href="">
+          <span>Project Title</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="work work-4">
+      <div class="work__image">
+        <a href="">
+          <img
+            class="lazyload"
+            data-sizes="auto"
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkZlD/DwABYwErWwRBvQAAAABJRU5ErkJggg=="
+            data-src="https://source.unsplash.com/900x1200"
+            alt=""
+          />
+        </a>
+      </div>
+      <div class="work__title">
+        <a href="">
+          <span>Project Title</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="work work-5">
+      <div class="work__image">
+        <a href="">
+          <img
+            class="lazyload"
+            data-sizes="auto"
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkZlD/DwABYwErWwRBvQAAAABJRU5ErkJggg=="
+            data-src="https://source.unsplash.com/1600x900"
+            alt=""
+          />
+        </a>
+      </div>
+      <div class="work__title">
+        <a href="">
+          <span>Project Title</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="container mx-auto work-display-cta flex justify-center mt-24 mb-28"
+  >
+    <a href="/work" class="button button--style--secondary button--size--large">
+      <div class="button__inner">
+        <div class="button__label">I wanna see more</div>
+
+        <div class="button__icon">
+          <div class="icon">
+            <i class="bx bx-right-arrow-alt"></i>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="clients" data-component='{"component": "scroller"}'>
+    <ul class="clients__inner">
+      <li>
+        <Image class="" src={tupperwave} alt="" />
+      </li>
+
+      <li>
+        <Image class="" src={gatx} alt="" />
+      </li>
+
+      <li>
+        <Image class="" src={redbull} alt="" />
+      </li>
+
+      <li>
+        <Image class="" src={hra} alt="" />
+      </li>
+
+      <li>
+        <Image class="" src={osce} alt="" />
+      </li>
+
+      <li>
+        <Image class="" src={otta} alt="" />
+      </li>
+
+      <li>
+        <Image class="" src={ses} alt="" />
+      </li>
+
+      <li>
+        <Image class="" src={air} alt="" />
+      </li>
+
+      <li>
+        <Image class="" src={ec} alt="" />
+      </li>
+
+      <li>
+        <Image class="" src={greenfibra} alt="" />
+      </li>
+
+      <li>
+        ``
+        <Image class="" src={signmesh} alt="" />
+      </li>
+
+      <li>
+        <Image class="" src={cricova} alt="" />
+      </li>
+    </ul>
   </div>
 </BaseLayout>

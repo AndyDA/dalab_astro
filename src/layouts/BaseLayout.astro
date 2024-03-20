@@ -1,3 +1,10 @@
+---
+import { Image } from "astro:assets";
+import logo from "../images/logo.svg";
+import "../styles/style.css";
+import { jsScripts } from "../scripts/main.js";
+---
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -18,24 +25,24 @@
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="assets/images/favicon/apple-touch-icon.png"
+      href="../images/favicon/apple-touch-icon.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="assets/images/favicon/favicon-32x32.png"
+      href="../images/favicon/favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="assets/images/favicon/favicon-16x16.png"
+      href="../images/favicon/favicon-16x16.png"
     />
-    <link rel="manifest" href="assets/images/favicon/site.webmanifest" />
+    <link rel="manifest" href="../images/favicon/site.webmanifest" />
     <link
       rel="mask-icon"
-      href="assets/images/favicon/safari-pinned-tab.svg"
+      href="../images/favicon/safari-pinned-tab.svg"
       color="#0060ff"
     />
     <meta name="apple-mobile-web-app-title" content="" />
@@ -43,7 +50,7 @@
     <meta name="msapplication-TileColor" content="#2d89ef" />
     <meta
       name="msapplication-TileImage"
-      content="assets/images/favicon/mstile-144x144.png"
+      content="../images/favicon/mstile-144x144.png"
     />
     <meta name="theme-color" content="#ffffff" />
     <!-- Open Graph / Facebook -->
@@ -59,14 +66,109 @@
     <meta property="twitter:description" content="" />
     <meta property="twitter:image" content="" />
 
-    <link rel="stylesheet" href="assets/styles/style.css" />
+    <link rel="stylesheet" href="../styles/style.css" />
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
   </head>
   <body>
-    <slot />
-    <script type="module" src="assets/scripts/main.js"></script>
+    <div class="page">
+      <div class="header" data-component='{"component": "header"}'>
+        <div class="header__logo">
+          <a href="./">
+            <Image src={logo} alt="Logo DART" />
+          </a>
+        </div>
+        <nav class="header__menu">
+          <div class="header__menu__item">
+            <a class="hover-slide hover-slide--nano" href="../about"> About </a>
+          </div>
+
+          <div class="header__menu__item">
+            <a class="hover-slide hover-slide--nano" href="../services">
+              Services
+            </a>
+          </div>
+
+          <div class="header__menu__item">
+            <a class="hover-slide hover-slide--nano" href="../work">Work</a>
+          </div>
+
+          <div class="header__menu__item">
+            <a class="hover-slide hover-slide--nano" href="../careers"
+              >Careers</a
+            >
+          </div>
+
+          <div class="header__menu__item">
+            <a class="hover-slide hover-slide--nano" href="../contact"
+              >Contact</a
+            >
+          </div>
+        </nav>
+      </div>
+      <slot />
+      <div class="footer">
+        <div class="footer__inner container mx-auto">
+          <div class="footer__upper">
+            <div class="footer__cta">
+              <div
+                data-component='{"component": "catchphrase"}'
+                data-array="Have a project in mind?,Sounds good?,Want something similar?,Anything caught your eye?,Interested to collaborate?,Interested in working with us?,Ready to start a project?,If you're excited — we're excited."
+              >
+              </div>
+              Let's <a class="hover-slide" href="mailto:">get in touch!</a>
+            </div>
+            <nav class="footer__menu">
+              <span><a class="hover-slide" href="#" target="">Home</a></span>
+
+              <span
+                ><a class="hover-slide" href="/about" target="">About</a></span
+              >
+
+              <span
+                ><a class="hover-slide" href="/services" target="">Services</a
+                ></span
+              >
+
+              <span><a class="hover-slide" href="/work" target="">Work</a></span
+              >
+
+              <span
+                ><a class="hover-slide" href="/contact" target="">Contact</a
+                ></span
+              >
+
+              <span
+                ><a class="hover-slide" href="/careers" target="">Careers</a
+                ></span
+              >
+            </nav>
+          </div>
+          <!-- <slot /> -->
+          <div class="footer__lower">
+            <div class="flex">
+              <span>&copy; Dart Studio 2024</span>
+              <nav>
+                <a href="/privacy" target="">Privacy Policy</a>
+
+                <a href="#" target="">Sitemap</a>
+
+                <a href="/accessibility" target="">Accessibility</a>
+              </nav>
+            </div>
+            <nav>
+              <a href="#" target="">Facebook</a>
+
+              <a href="#" target="">X (formerly known as Twitter)</a>
+
+              <a href="#" target="">LinkedIn</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <script type="module" src="/assets/scripts/main.js"></script>
+    </div>
   </body>
 </html>
