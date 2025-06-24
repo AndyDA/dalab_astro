@@ -23,7 +23,7 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
 
 export default defineConfig({
   site: 'https://andyda.github.io',
-  base: 'dalab_astro',
+  base: '/dalab_astro',
   output: 'static',
 
   integrations: [
