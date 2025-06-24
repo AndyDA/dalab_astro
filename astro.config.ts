@@ -22,7 +22,7 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
   hasExternalScripts ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
 
 export default defineConfig({
-  site: 'https://dalab_astro.github.io',
+  site: 'https://AndyDA.github.io',
   output: 'static',
 
   integrations: [
