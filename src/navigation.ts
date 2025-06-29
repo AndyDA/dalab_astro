@@ -3,116 +3,114 @@ import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
 export const headerData = {
   links: [
     {
-      text: 'Homes',
-      links: [
-        {
-          text: 'SaaS',
-          href: getPermalink('/homes/saas'),
-        },
-        {
-          text: 'Startup',
-          href: getPermalink('/homes/startup'),
-        },
-        {
-          text: 'Mobile App',
-          href: getPermalink('/homes/mobile-app'),
-        },
-        {
-          text: 'Personal',
-          href: getPermalink('/homes/personal'),
-        },
-      ],
+      text: 'H.',
+      href: getPermalink('/'),
+      // links: [
+      //   {
+      //     text: 'SaaS',
+      //     href: getPermalink('/homes/saas'),
+      //   },
+      //   {
+      //     text: 'Startup',
+      //     href: getPermalink('/homes/startup'),
+      //   },
+      //   {
+      //     text: 'Mobile App',
+      //     href: getPermalink('/homes/mobile-app'),
+      //   },
+      //   {
+      //     text: 'Personal',
+      //     href: getPermalink('/homes/personal'),
+      //   },
+      // ],
     },
     {
-      text: 'Pages',
+      text: 'Services',
       links: [
         {
-          text: 'Features (Anchor Link)',
+          text: 'Managed Services',
           href: getPermalink('/#features'),
         },
         {
-          text: 'Services',
+          text: 'IT Consulting & Advisory',
           href: getPermalink('/services'),
         },
         {
-          text: 'Pricing',
+          text: 'Cyber Security',
           href: getPermalink('/pricing'),
         },
         {
-          text: 'About us',
+          text: 'Web Development',
           href: getPermalink('/about'),
         },
         {
-          text: 'Contact',
+          text: 'Mobile Development',
           href: getPermalink('/contact'),
         },
         {
-          text: 'Terms',
+          text: 'Cloud Services',
           href: getPermalink('/terms'),
-        },
-        {
-          text: 'Privacy policy',
-          href: getPermalink('/privacy'),
-        },
+        },   
       ],
     },
     {
-      text: 'Landing',
+      text: 'Solutions',
       links: [
         {
-          text: 'Lead Generation',
+          text: 'Restaurant & Food Delivery',
           href: getPermalink('/landing/lead-generation'),
         },
         {
-          text: 'Long-form Sales',
+          text: 'Resort & Hotel Boking',
           href: getPermalink('/landing/sales'),
         },
         {
-          text: 'Click-Through',
-          href: getPermalink('/landing/click-through'),
-        },
-        {
-          text: 'Product Details (or Services)',
+          text: 'Logistics, Cargo & Transportation',
           href: getPermalink('/landing/product'),
         },
         {
-          text: 'Coming Soon or Pre-Launch',
-          href: getPermalink('/landing/pre-launch'),
+          text: 'Nonprofit & Charity',
+          href: getPermalink('/landing/click-through'),
         },
-        {
-          text: 'Subscription',
-          href: getPermalink('/landing/subscription'),
-        },
+        // {
+        //   text: 'Coming Soon or Pre-Launch',
+        //   href: getPermalink('/landing/pre-launch'),
+        // },
+        // {
+        //   text: 'Subscription',
+        //   href: getPermalink('/landing/subscription'),
+        // },
       ],
     },
     {
       text: 'Blog',
-      links: [
-        {
-          text: 'Blog List',
-          href: getBlogPermalink(),
-        },
-        {
-          text: 'Article',
-          href: getPermalink('get-started-website-with-astro-tailwind-css', 'post'),
-        },
-        {
-          text: 'Article (with MDX)',
-          href: getPermalink('markdown-elements-demo-post', 'post'),
-        },
-        {
-          text: 'Category Page',
-          href: getPermalink('tutorials', 'category'),
-        },
-        {
-          text: 'Tag Page',
-          href: getPermalink('astro', 'tag'),
-        },
-      ],
+      href: getBlogPermalink(),
+      // links: [
+      //   {
+      //     text: 'Blog List',
+      //     href: getBlogPermalink(),
+      //   },
+      //   {
+      //     text: 'Article',
+      //     href: getPermalink('get-started-website-with-astro-tailwind-css', 'post'),
+      //   },
+      //   {
+      //     text: 'Article (with MDX)',
+      //     href: getPermalink('markdown-elements-demo-post', 'post'),
+      //   },
+      //   {
+      //     text: 'Category Page',
+      //     href: getPermalink('tutorials', 'category'),
+      //   },
+      //   {
+      //     text: 'Tag Page',
+      //     href: getPermalink('astro', 'tag'),
+      //   },
+      // ],
     },
     {
-      text: 'Widgets',
-      href: '#',
+      text: 'About Us',
+      href: getPermalink('/about'),
     },
   ],
   actions: [{ text: 'Download', href: 'https://github.com/onwidget/astrowind', target: '_blank' }],
@@ -177,7 +175,7 @@ export const footerData = {
     // { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/onwidget/astrowind' },
   ],
   footNote: `
-    <img class="w-5 h-5 md:w-6 md:h-6 md:-mt-0.5 bg-cover mr-1.5 rtl:mr-0 rtl:ml-1.5 float-left rtl:float-right rounded-sm" src="src/assets/images/da.png" alt="DALAB logo" loading="lazy"></img>
+    <img class="w-5 h-5 md:w-6 md:h-6 md:-mt-0.5 bg-cover mr-1.5 rtl:mr-0 rtl:ml-1.5 float-left rtl:float-right rounded-sm" src="/src/assets/images/da.png" alt="DALAB logo" loading="lazy"></img>
     Made by <a class="text-blue-600 underline dark:text-muted" href="https://dalab.top/"> DALAB Agency</a> · All rights reserved.
   `,
 };
