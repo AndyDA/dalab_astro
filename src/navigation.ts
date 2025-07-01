@@ -61,7 +61,7 @@ export const headerData = {
           href: getPermalink('/landing/lead-generation'),
         },
         {
-          text: 'Resort & Hotel Boking',
+          text: '',
           href: getPermalink('/landing/sales'),
         },
         {
