@@ -58,7 +58,7 @@ export const headerData = {
       links: [
         {
           text: 'Restaurant & Food Delivery',
-          href: getPermalink('/landing/lead-generation'),
+          href: getPermalink('/landing/restaurant-food-delivery'),
         },
         {
           text: 'Resort & Hotel Booking',
@@ -83,8 +83,49 @@ export const headerData = {
       ],
     },
     {
+      text: 'AI integrations',
+      links: [
+        {
+          text: 'Marketing',
+          href: getPermalink('#'),
+        },
+        {
+          text: 'CRM and Sales Automation',
+          href: getPermalink('#'),
+        },
+        {
+          text: 'Automated Data Collection and Reporting',
+          href: getPermalink('#'),
+        },
+        {
+          text: 'Marketing Automation',
+          href: getPermalink('#'),
+        },
+        {
+          text: 'Customer Support Ticketing',
+          href: getPermalink('#'),
+        },
+        {
+          text: 'HR and Recruitment Automation',
+          href: getPermalink('#'),
+        },
+        {
+          text: 'Invoice and Billing Processing Estate',
+          href: getPermalink('#'),
+        },
+        {
+          text: 'E-commerce & Inventory Management',
+          href: getPermalink('#'),
+        },
+        {
+          text: 'Compliance and Audit Trail Automation',
+          href: getPermalink('#'),
+        },
+      ],
+    },
+    {
       text: 'Blog',
-      href: getBlogPermalink(),
+      href: getBlogPermalink('/blog'),
       // links: [
       //   {
       //     text: 'Blog List',
@@ -109,11 +150,32 @@ export const headerData = {
       // ],
     },
     {
-      text: 'About Us',
-      href: getPermalink('/about'),
+      text: 'Insights',
+      links: [
+        {
+          text: 'About Us',
+          href: getPermalink('/about'),
+        },
+        {
+          text: 'Our Team',
+          href: getPermalink('/homes/startup'),
+        },
+        {
+          text: 'Careers',
+          href: getPermalink('/homes/mobile-app'),
+        },
+        {
+          text: 'Our Work',
+          href: getPermalink('/homes/personal'),
+        },
+        {
+          text: 'Pricing',
+          href: getPermalink('/pricing'),
+        },
+      ],
     },
   ],
-  actions: [{ text: 'Download', href: 'https://github.com/onwidget/astrowind', target: '_blank' }],
+  actions: [{ text: 'Contact', href: '/contact', target: '_blank' }],
 };
 
 export const footerData = {
