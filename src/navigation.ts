@@ -28,28 +28,20 @@ export const headerData = {
       text: 'Services',
       links: [
         {
-          text: 'Managed Services',
-          href: getPermalink('/#features'),
-        },
-        {
-          text: 'IT Consulting & Advisory',
+          text: 'Drupal Development',
           href: getPermalink('/services'),
         },
         {
-          text: 'Cyber Security',
+          text: 'UI/UX Design',
+          href: getPermalink('/services'),
+        },
+        {
+          text: 'E-commerce',
           href: getPermalink('/pricing'),
         },
         {
-          text: 'Web Development',
+          text: 'Branding',
           href: getPermalink('/about'),
-        },
-        {
-          text: 'Mobile Development',
-          href: getPermalink('/contact'),
-        },
-        {
-          text: 'Cloud Services',
-          href: getPermalink('/terms'),
         },
       ],
     },
