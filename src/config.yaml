@@ -1,6 +1,6 @@
 site:
   name: DALAB Agency
-  site: 'https://astrowind.vercel.app'
+  site: 'https://dalab.top'
   base: '/'
   trailingSlash: false
 
@@ -9,22 +9,22 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: AstroWind
-    template: '%s — AstroWind'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+    default: DALAB — Design. Code. Impress.
+    template: '%s — DALAB Agency'
+  description: "\U0001F680 Empowering Businesses to grow, innovate, and operate efficiently through tailored, cutting-edge IT solutions. For bold brands that crave more than cookie-cutter support."
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind
+    site_name: DALAB Agency
     images:
       - url: '~/assets/images/default.png'
         width: 1200
         height: 628
     type: website
   twitter:
-    handle: '@onwidget'
-    site: '@onwidget'
+    handle: '@dalab_agency'
+    site: '@dalab_agency'
     cardType: summary_large_image
 
 i18n:
