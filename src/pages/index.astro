@@ -41,12 +41,11 @@ const metadata = {
 
     <Fragment slot='subtitle'>
       <span class='hidden sm:inline'>
-        For bold brands that crave more than cookie-cutter support. <span class='font-semibold'>DALAB Agency</span> isn’t
-        your average agency — we’re the digital dream team that actually listens, thinks big, and gets things done.
+        We work with brands who want something better than the usual template treatment. At <span class='font-semibold'>DALAB Agency</span>, we're not about corporate scripts or endless meetings—we're the team that genuinely listens, dreams up big ideas with you, and makes them happen.
       </span>
 
       <span class='block mb-1 sm:hidden font-bold text-blue-600'>DALAB Agency: Design. Code. Impress.</span>
-      We blend strategy, design, and tech into seamless digital experiences that move the needle.
+      We bring together strategy, design, and tech to create digital experiences that actually work.
     </Fragment>
   </Hero>
 
@@ -101,7 +100,7 @@ const metadata = {
     ]}
   />
 
-  <!-- Content Widget **************** -->
+  <!-- Content Widget Restaurant & Food Delivery -->
 
   <Content
     isReversed
@@ -125,8 +124,8 @@ const metadata = {
       },
     ]}
     image={{
-      src: '~/assets/images/food-app.png',
-      alt: 'Colorful Image',
+      src: '~/assets/images/food-serv.png',
+      alt: 'Restaurant & Food Delivery Image',
     }}
   >
     <Fragment slot='content'>
@@ -139,7 +138,7 @@ const metadata = {
     </Fragment>
   </Content>
 
-  <!-- Content Widget **************** -->
+  <!-- Content Widget Resort & Hotel Booking -->
 
   <Content
     isAfterContent
@@ -158,25 +157,23 @@ const metadata = {
         description:
           "Ensure your website's optimal performance on various devices and screen sizes, providing a consistent and enjoyable user experience.",
       },
-      {
-        title: 'Integration of media',
-        description:
-          'Seamlessly incorporate images, videos, and multimedia elements that enhance your content and engage visitors effectively.',
-      },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
-      alt: 'Blueprint Image',
+      src: '~/assets/images/hotel-serv.png',
+      alt: 'Resort & Hotel Booking Image',
     }}
   >
-    <Fragment slot='content'>Ensure your online presence truly represents you.</Fragment>
+    <Fragment slot='content'>
+      <h3 class='text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2'>Resort & Hotel Booking</h3>
+      Ensure your online presence truly represents you.
+    </Fragment>
 
     <Fragment slot='bg'>
       <div class='absolute inset-0 bg-blue-50 dark:bg-transparent'></div>
     </Fragment>
   </Content>
 
-  <!-- Content Widget **************** -->
+  <!-- Content Widget Logistics, Cargo & Transportation -->
 
   <Content
     isReversed
@@ -197,112 +194,112 @@ const metadata = {
         description:
           'Skip the time-consuming process of building a website from scratch and launch your online presence sooner with AstroWind.',
       },
-      {
-        title: 'Community support',
-        description: `Join the growing AstroWind community for insights, resources, and assistance, ensuring you're never alone on your web development journey.`,
-      },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      src: '~/assets/images/cargo-serv.jpg',
       alt: 'Astronauts Image',
     }}
   >
-    <Fragment slot='content'>Designed to foster growth and success.</Fragment>
+    <Fragment slot='content'>
+      <h3 class='text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2'>Logistics, Cargo & Transportation</h3>
+      Designed to foster growth and success.
+    </Fragment>
 
     <Fragment slot='bg'>
       <div class='absolute inset-0 bg-blue-50 dark:bg-transparent'></div>
     </Fragment>
   </Content>
 
-  <!-- Steps Widget ****************** -->
+<!-- Content Widget Resort & Hotel Booking -->
 
-  <Steps
-    title='Get your dream website up and running in no time with AstroWind.'
+  <Content
+    isAfterContent
     items={[
       {
-        title: 'Step 1: <span class="font-medium">Download</span>',
-        description:
-          "Kickstart with GitHub! Either fork the AstroWind template or simply click 'Use this template'. Your canvas awaits, ready for your digital masterpiece. In just a few clicks, you've already set the foundation.",
-        icon: 'tabler:package',
+        title: 'High level of customization',
+        description: `Tailor the template effortlessly to match your brand's identity and requirements, making your website distinct and saving you time.`,
       },
       {
-        title: 'Step 2: <span class="font-medium">Add content</span>',
+        title: 'Multiple layout possibilities',
         description:
-          "Pour your vision into it. Add images, text, and all that jazz to breathe life into your digital space. Remember, it's the content that tells your story, so make it captivating.",
-        icon: 'tabler:letter-case',
+          'Explore various layout options to find the structure that best presents your content, enhancing user engagement and navigation.',
       },
       {
-        title: 'Step 3: <span class="font-medium">Customize styles</span>',
+        title: 'Fully responsive design',
         description:
-          'Give it your personal touch. Tailor colors, fonts, and layouts until it feels just right. Your unique flair, amplified by AstroWind! Precision in design ensures a seamless user experience.',
-        icon: 'tabler:paint',
-      },
-      {
-        title: 'Ready!',
-        icon: 'tabler:check',
+          "Ensure your website's optimal performance on various devices and screen sizes, providing a consistent and enjoyable user experience.",
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
-      alt: 'Steps image',
+      src: '~/assets/images/charity-serv.png',
+      alt: 'Blueprint Image',
     }}
-  />
+  >
+    <Fragment slot='content'>
+      <h3 class='text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2'>Nonprofit & Charity</h3>
+      Ensure your online presence truly represents you.
+    </Fragment>
+
+    <Fragment slot='bg'>
+      <div class='absolute inset-0 bg-blue-50 dark:bg-transparent'></div>
+    </Fragment>
+  </Content>
 
   <!-- Features2 Widget ************** -->
 
   <Features2
-    title='Most used widgets'
-    subtitle='Provides frequently used components for building websites using Tailwind CSS'
-    tagline='Components'
+    title='Automate any workflow with AI'
+    subtitle='Discover how AI can transform your marketing, sales, and operations workflows.'
+    tagline='AI integrations'
     items={[
       {
-        title: 'Headers',
-        description: "Ever tried driving without GPS? Boom! That's why websites need headers for direction.",
+        title: 'Automate Personalized Sales Outreach with AI',
+        description: "Automatically generate and send personalized outreach emails to prospects using Salesforce data and AI.",
         icon: 'flat-color-icons:template',
       },
       {
-        title: 'Heros',
+        title: 'Automate AI Content Creation and Publishing',
         description:
-          "Picture a superhero landing – epic, right? That's the job of a Hero section, making grand entrances!",
+          "Generate, review, and publish content across platforms using AI and collaborative tools.",
         icon: 'flat-color-icons:gallery',
       },
       {
-        title: 'Features',
+        title: 'Automate AI-Powered Email Marketing Campaigns',
         description:
-          'Where websites strut their stuff and show off superpowers. No holding back on the bragging rights here!',
+          'Automatically generate and send personalized email campaigns using AI for content creation and recipient engagement tracking.',
         icon: 'flat-color-icons:approval',
       },
       {
-        title: 'Content',
+        title: 'Automate Personalized Sales Outreach with AI',
         description:
-          "Dive into the meat and potatoes of a site; without it, you'd just be window shopping. Content is king.",
+          "Automatically generate and send personalized outreach emails to prospects using Salesforce data and AI.",
         icon: 'flat-color-icons:document',
       },
       {
-        title: 'Call-to-Action',
+        title: 'Optimize Sales Pipeline with AI Insights',
         description:
-          'That enthusiastic friend who\'s always urging, "Do it! Do it!"? Yeah, that\'s this button nudging you towards adventure.',
+          'Enhance your sales processes with AI-powered opportunity analysis and automated follow-ups.',
         icon: 'flat-color-icons:advertising',
       },
       {
-        title: 'Pricing',
-        description: 'Behold the dessert menu of the website world. Tempting choices await, can you resist?',
+        title: 'Automate Customer Onboarding Process',
+        description: 'Streamline customer onboarding with automated communications, resources, and support channels.',
         icon: 'flat-color-icons:currency-exchange',
       },
       {
-        title: 'Testimonial',
-        description: 'Step into the gossip corner! Here, other visitors spill the beans and share the juicy details.',
+        title: 'Automate Product Launch Campaigns with AI',
+        description: 'Coordinate product launches by generating marketing materials and automating multi-channel promotions.',
         icon: 'flat-color-icons:voice-presentation',
       },
       {
-        title: 'Contact',
+        title: 'Automate Product Feedback Collection and Analysis',
         description:
-          'Like a digital mailbox, but faster! Drop a line, ask a question, or send a virtual high-five. Ding! Message in.',
+          'Gather user feedback and analyze it for product improvement using AI.',
         icon: 'flat-color-icons:business-contact',
       },
       {
-        title: 'Footers',
-        description: "The footer's like the credits of a movie but sprinkled with easter eggs. Time to hunt!",
+        title: 'Optimize Social Media Engagement with AI',
+        description: "Automate monitoring and responding to social media interactions to boost engagement.",
         icon: 'flat-color-icons:database',
       },
     ]}
@@ -316,49 +313,48 @@ const metadata = {
 
   <BlogLatestPosts
     title='Find out more content in our Blog'
-    information={`The blog is used to display AstroWind documentation.
-                        Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.
-                        Astro is a very interesting technology. Thanks.
+    information={`
+    Tips, trends, and behind-the-scenes looks at what makes digital projects succeed. Real talk about design, development, SEO, and growing your business online—free knowledge straight from our team, with new posts every week.
                 `}
   />
 
   <!-- FAQs Widget ******************* -->
 
   <FAQs
-    title='Frequently Asked Questions'
-    subtitle='Dive into the following questions to gain insights into the powerful features that AstroWind offers and how it can elevate your web development journey.'
+    title='All your branding, marketing and web design questions–answered.'
+    subtitle="Digital strategy shouldn't feel like guesswork. We're here to bring clarity to the process and help you make informed choices with confidence. If your question isn't answered below, don't hesitate to reach out—we're always available to help."
     tagline='FAQs'
     classes={{ container: 'max-w-6xl' }}
     items={[
       {
-        title: 'Why AstroWind?',
+        title: 'Why DALAB Agency?',
         description:
-          "Michael Knight a young loner on a crusade to champion the cause of the innocent. The helpless. The powerless in a world of criminals who operate above the law. Here he comes Here comes Speed Racer. He's a demon on wheels.",
+          "Forget everything you know about agencies. We're built differently—combining enterprise-level impact with boutique flexibility. You get custom, data-backed strategies and direct access to the people doing the work. Zero red tape, zero filler. Just outcomes that matter.",
       },
       {
-        title: 'What do I need to start?',
+        title: 'What is the cost range for your services?',
         description:
-          'Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds. Many say exploration is part of our destiny, but it’s actually our duty to future generations.',
+          "Your investment matches your ambition. We build custom quotes based on what you actually need—whether that's a standout website, search visibility, or comprehensive marketing. You'll know exactly what you're paying for and why.",
       },
       {
-        title: 'How to install the Astro + Tailwind CSS template?',
+        title: 'What industries do you work with?',
         description:
-          "Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows.",
+          "We work across various sectors including e-commerce, professional services, SaaS, healthcare, finance, and hospitality. Our approach is adaptable—we focus on understanding your unique market rather than applying generic templates.",
       },
       {
-        title: "What's something that you don't understand?",
+        title: "What services do you offer?",
         description:
-          "A flower in my garden, a mystery in my panties. Heart attack never stopped old Big Bear. I didn't even know we were calling him Big Bear.",
+          "Custom web design and development, SEO and search marketing, brand strategy, content creation, UX/UI design, e-commerce solutions, and ongoing digital marketing. We can handle single projects or become your full digital team.",
       },
       {
-        title: 'What is something that you would like to try again?',
+        title: 'How long does a typical project take?',
         description:
-          "A business big enough that it could be listed on the NASDAQ goes belly up. Disappears! It ceases to exist without me. No, you clearly don't know who you're talking to, so let me clue you in.",
+          "It depends on scope. A custom website typically takes 6-12 weeks. SEO campaigns show initial results in 3-6 months. We'll give you realistic timelines during our discovery phase—no overpromising.",
       },
       {
-        title: 'If you could only ask one question to each person you meet, what would that question be?',
+        title: "What's your design and development process?",
         description:
-          "This is not about revenge. This is about justice. A lot of things can change in twelve years, Admiral. Well, that's certainly good to know. About four years. I got tired of hearing how young I looked.",
+          "Discovery and strategy → wireframing and prototyping → design concepts → development → testing → launch → optimization. You're involved at key milestones, with regular check-ins to ensure we're aligned.",
       },
     ]}
   />
@@ -367,10 +363,10 @@ const metadata = {
 
   <Stats
     stats={[
-      { title: 'Projects', amount: '34' },
-      { title: 'Stars', amount: '24.8K' },
-      { title: 'Forks', amount: '10.3K' },
-      { title: 'Users', amount: '48.4K' },
+      { title: 'Projects Delivered', amount: '150+' },
+      { title: 'Years in Business', amount: '9+' },
+      { title: 'Industries Served', amount: '12+' },
+      { title: 'Brands Transformed', amount: '100+' },
     ]}
   />
 
@@ -380,20 +376,19 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
-        text: 'Get template',
+        text: "Let's Talk",
         href: 'https://github.com/onwidget/astrowind',
         target: '_blank',
-        icon: 'tabler:download',
+        icon: 'tabler:brand-hipchat',
       },
     ]}
   >
     <Fragment slot='title'>
-      Astro&nbsp;+&nbsp;<br class='block sm:hidden' /><span class='sm:whitespace-nowrap'>Tailwind CSS</span>
+      We are ready – When You Are
     </Fragment>
 
     <Fragment slot='subtitle'>
-      Be very surprised by these huge fake numbers you are seeing on this page. <br class='hidden md:inline' />Don't
-      waste more time! :P
+      Tell us what you're thinking. We'll help you make it real.
     </Fragment>
   </CallToAction>
 </Layout>
