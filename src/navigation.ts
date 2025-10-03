@@ -78,41 +78,41 @@ export const headerData = {
       text: 'AI integrations',
       links: [
         {
+          text: 'Operations',
+          href: getPermalink('#'),
+        },
+        {
           text: 'Marketing',
           href: getPermalink('#'),
         },
         {
-          text: 'CRM and Sales Automation',
+          text: 'Sales',
           href: getPermalink('#'),
         },
-        {
-          text: 'Automated Data Collection and Reporting',
-          href: getPermalink('#'),
-        },
-        {
-          text: 'Marketing Automation',
-          href: getPermalink('#'),
-        },
-        {
-          text: 'Customer Support Ticketing',
-          href: getPermalink('#'),
-        },
-        {
-          text: 'HR and Recruitment Automation',
-          href: getPermalink('#'),
-        },
-        {
-          text: 'Invoice and Billing Processing Estate',
-          href: getPermalink('#'),
-        },
-        {
-          text: 'E-commerce & Inventory Management',
-          href: getPermalink('#'),
-        },
-        {
-          text: 'Compliance and Audit Trail Automation',
-          href: getPermalink('#'),
-        },
+        // {
+        //   text: 'Marketing Automation',
+        //   href: getPermalink('#'),
+        // },
+        // {
+        //   text: 'Customer Support Ticketing',
+        //   href: getPermalink('#'),
+        // },
+        // {
+        //   text: 'HR and Recruitment Automation',
+        //   href: getPermalink('#'),
+        // },
+        // {
+        //   text: 'Invoice and Billing Processing Estate',
+        //   href: getPermalink('#'),
+        // },
+        // {
+        //   text: 'E-commerce & Inventory Management',
+        //   href: getPermalink('#'),
+        // },
+        // {
+        //   text: 'Compliance and Audit Trail Automation',
+        //   href: getPermalink('#'),
+        // },
       ],
     },
     {
@@ -154,11 +154,11 @@ export const headerData = {
         },
         {
           text: 'Careers',
-          href: getPermalink('/homes/mobile-app'),
+          href: getPermalink('/'),
         },
         {
           text: 'Our Work',
-          href: getPermalink('/homes/personal'),
+          href: getPermalink('/'),
         },
         {
           text: 'Pricing',
