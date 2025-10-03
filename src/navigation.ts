@@ -29,19 +29,19 @@ export const headerData = {
       links: [
         {
           text: 'Drupal Development',
-          href: getPermalink('/landing/drupal-development'),
+          href: getPermalink('/services/drupal-development'),
         },
         {
           text: 'UI/UX Design',
-          href: getPermalink('/services'),
+          href: getPermalink('/services/ui-ux-design'),
         },
         {
           text: 'E-commerce',
-          href: getPermalink('/pricing'),
+          href: getPermalink('/services/e-commerce'),
         },
         {
           text: 'Branding',
-          href: getPermalink('/about'),
+          href: getPermalink('/services/branding'),
         },
       ],
     },
@@ -146,23 +146,23 @@ export const headerData = {
       links: [
         {
           text: 'About Us',
-          href: getPermalink('/about'),
+          href: getPermalink('/insights/about'),
         },
         {
           text: 'Our Team',
-          href: getPermalink('/homes/startup'),
-        },
-        {
-          text: 'Careers',
-          href: getPermalink('/'),
+          href: getPermalink('/insights/team'),
         },
         {
           text: 'Our Work',
           href: getPermalink('/'),
         },
         {
+          text: 'Careers',
+          href: getPermalink('/insights/careers'),
+        },
+        {
           text: 'Pricing',
-          href: getPermalink('/pricing'),
+          href: getPermalink('/insights/pricing'),
         },
       ],
     },

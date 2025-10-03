@@ -1,0 +1,224 @@
+---
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Services',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="UI/UX Design Services"
+    title="We focus on delivering high quality user experience design"
+    subtitle="Professional, cohesive design signals credibility and reliability. Users form opinions about your product in milliseconds—polished UI and thoughtful UX create positive first impressions and lasting trust that differentiate you from competitors and increase customer retention."
+    actions={[{ variant: 'primary', target: '_blank', text: 'Contact Us', href: '/' }]}
+    image={{
+      src: '~/assets/images/design-office.png',
+      alt: 'Design Hero Image',
+    }}
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="Disciplines"
+    subtitle="Discover our selection below to streamline and elevate your projects."
+    columns={3}
+    items={[
+      {
+        title: 'Product Strategy',
+        description:
+          'We conceptualise products that stand out with desirable features, we create concepts to demonstrate product ideas and plan product roadmaps.',
+        icon: 'tabler:bulb',
+      },
+      {
+        title: 'User Research',
+        description:
+          'In user research programs we combine quantitative and qualitative methods to discover user needs and pain points, to create models of user behaviour and to provide a reliable foundation for strategic decisions.',
+        icon: 'tabler:home-star',
+      },
+      {
+        title: 'UX Design',
+        description: `By combining iterative design with research we create the logic of user journeys, the structure of layouts and the interactions that make up the core of how people use the application.`,
+        icon: 'tabler:tool',
+      },
+      {
+        title: 'UI Design',
+        description:
+          'The subtle ways in which we use colour, typography and graphics to create a harmonious visual style comes to represent an application across different platforms.',
+        icon: 'tabler:shopping-cart',
+      },
+      {
+        title: 'Protopyping and User Testing',
+        description:
+          'We create interactive prototypes that capture the experience of a product module and we use behavioural measures to discover which interaction concepts bring the best results.',
+        icon: 'tabler:message-dots',
+      },
+      {
+        title: 'Usability Audit',
+        description:
+          'Our usability audit covers both the UX and the UI design of an application, highlighting how design can contribute to improved results. The usability audit includes analysis and recommendations.',
+        icon: 'tabler:building-store',
+      },
+      {
+        title: 'Web Development',
+        description:
+          'We create web applications using scalable technologies with strong capabilities both in terms of frontend and backend.',
+        icon: 'tabler:seo',
+      },
+      {
+        title: 'Text',
+        description: `Secure Payment Solutions: We integrate trusted payment gateways and implement robust security measures, ensuring your customers shop with confidence while you meet PCI compliance standards.`,
+        icon: 'tabler:credit-card-pay',
+      },
+      {
+        title: 'Text',
+        description:
+          'We optimize your Drupal solution for lightning-fast load times and smooth checkout experiences that reduce cart abandonment and boost conversions.',
+        icon: 'tabler:load-balancer',
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    items={[
+      {
+        title: 'Drupal-First Specialists',
+        description:
+          'We live and breathe Drupal, with deep expertise across all versions and modules.',
+        icon: 'tabler:wand',
+      },
+      {
+        title: 'Proven Track Record',
+        description:
+          'Successfully delivered 200+ Drupal projects for businesses of all sizes, from startups to enterprises.',
+        icon: 'tabler:settings',
+      },
+      {
+        title: 'Certified Developers',
+        description:
+          'Our team holds official Drupal certifications and contributes to the community of Drupal developers',
+        icon: 'tabler:presentation',
+      },
+      {
+        title: 'Future-Ready Solutions',
+        description:
+          "We build with Drupal 10's latest features and emerging web technologies to ensure your solution stays ahead of the curve.",
+        icon: 'tabler:carousel-horizontal',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/drupal-expertise.png',
+      alt: 'Expertixe & Experience Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Expertise & Experience</h3>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: 'Partnership Approach',
+        description:
+          'We work as an extension of your team, not just another vendor. We collaborate closely with you to understand your unique needs and goals, ensuring.',
+        icon: 'tabler:clock',
+      },
+      {
+        title: 'Transparent Process',
+        description:
+          'Clear communication, regular updates, and no hidden surprises. We keep you informed every step of the way, so you can track progress and make informed decisions.',
+        icon: 'tabler:school',
+      },
+      {
+        title: '24/7 Support Available',
+        description:
+          'Round-the-clock maintenance and support when you need it most. We ensure your website or application is always up and running smoothly.',
+        icon: 'tabler:coin',
+      },
+      {
+        title: 'Long-term Success Focus',
+        description:
+          'We optimize for your growth, not just project completion. We build scalable solutions that adapt to your evolving needs.',
+        icon: 'tabler:file-download',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/drupal-service.png',
+      alt: 'Service & Support Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Service & Support</h3>
+    </Fragment>
+  </Content>
+
+  <!-- Testimonials Widget *********** -->
+
+  <Testimonials
+    title="Words from real customers"
+    testimonials={[
+      {
+        testimonial: `We were stuck on an outdated platform that couldn't handle our growing inventory. DALAB Agency migrated our entire e-commerce operation to Drupal Commerce seamlessly - zero downtime, zero lost sales. Their team understood both our technical needs and business goals. Six months later, our conversion rates are up 40% and managing products is actually enjoyable now. Worth every penny.`,
+        name: 'Sarah Chen',
+        job: 'E-commerce Director, Alpine Outdoor Gear',
+        image: {
+          src: 'https://images.unsplash.com/photo-1618835962148-cf177563c6c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=930&q=80',
+          alt: 'Sarah Chen Image',
+        },
+      },
+      {
+        testimonial: `DALAB Agency didn't just build us a website - they built us a digital ecosystem. Their Drupal expertise transformed how we manage content across 12 different product lines. The 24/7 support has been incredible too. When we had a critical issue at 2 AM before a major product launch, their team was online within minutes. They truly work as an extension of our team.`,
+        name: 'Marcus Rodriguez',
+        job: 'Digital Strategy Manager, TechFlow Industries',
+        image: {
+          src: 'https://images.unsplash.com/photo-1561406636-b80293969660?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+          alt: 'Marcus Rodriguez Image',
+        },
+      },
+      {
+        testimonial: `Our old site looked dated and loaded slowly. DALAB Agency completely reimagined our user experience while keeping all our Drupal functionality intact. The new design is stunning and mobile-optimized, plus page load times dropped by 60%. Our bounce rate plummeted and customer feedback has been overwhelmingly positive. They really know how to make Drupal beautiful and fast.`,
+        name: 'Jennifer Walsh',
+        job: 'Marketing Director, Coastal Financial Services',
+        image: {
+          src: 'https://images.unsplash.com/photo-1545167622-3a6ac756afa4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=824&q=80',
+          alt: 'Jennifer Walsh Image',
+        },
+      },
+    ]}
+    callToAction={{
+      target: '_blank',
+      text: 'More testimonials...',
+      href: 'https://github.com/onwidget/astrowind',
+      icon: 'tabler:chevron-right',
+    }}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Start exploring',
+        href: '/',
+      },
+    ]}
+    title="Dive into our template collection"
+    subtitle="Whether you're in business, design, or education, our templates are here to elevate your projects."
+  />
+</Layout>
