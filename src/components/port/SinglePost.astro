@@ -8,6 +8,7 @@ import SocialShare from '~/components/common/SocialShare.astro';
 import { getFormattedDate } from '~/utils/utils';
 
 import type { Portfolio } from '~/types';
+import Badge from '../ui/Badge.astro';
 
 export interface Props {
   post: Portfolio;
@@ -104,7 +105,9 @@ const { post, url } = Astro.props;
             <h3 class='text-lg font-semibold mb-2'>Technologies Used:</h3>
             <div class='flex flex-wrap gap-2'>
               {post.technologies.map((tech) => (
-                <span class='bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium'>{tech}</span>
+                <Badge variant='primary' size='xs'>
+                  {tech}
+                </Badge>
               ))}
             </div>
           </div>
