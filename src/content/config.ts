@@ -90,5 +90,5 @@ const portfolioCollection = defineCollection({
 
 export const collections = {
   post: postCollection,
-  portfolio: portfolioCollection,
+  port: portfolioCollection,
 };

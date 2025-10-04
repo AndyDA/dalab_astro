@@ -1,12 +1,11 @@
 ---
-title: "Modern E-commerce Website"
-excerpt: "A responsive e-commerce platform with modern design and seamless user experience"
-image: "/src/assets/images/portfolio/ecommerce-site.jpg"
-category: "web-design"
-tags: ["React", "Node.js", "Stripe"]
-client: "TechCorp Inc."
-projectUrl: "https://techcorp-demo.com"
-technologies: ["React", "TypeScript", "Tailwind CSS", "Stripe", "Sanity CMS"]
+title: 'Modern E-commerce Website'
+excerpt: 'A responsive e-commerce platform with modern design and seamless user experience'
+category: 'web-design'
+tags: ['React', 'Node.js', 'Stripe']
+client: 'TechCorp Inc.'
+projectUrl: 'https://techcorp-demo.com'
+technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Stripe', 'Sanity CMS']
 featured: true
 publishDate: 2024-01-15
 ---

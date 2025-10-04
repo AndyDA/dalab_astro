@@ -154,7 +154,7 @@ export const headerData = {
         },
         {
           text: 'Our Work',
-          href: getPermalink('/'),
+          href: getPermalink('/portfolio'),
         },
         {
           text: 'Careers',
