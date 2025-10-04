@@ -1,0 +1,37 @@
+---
+import type { InferGetStaticPropsType, GetStaticPaths } from 'astro';
+import { portfolioTagRobots, getStaticPathsPortfolioTag } from '~/utils/portfolio';
+
+import Layout from '~/layouts/PageLayout.astro';
+import PortList from '~/components/port/List.astro';
+import Headline from '~/components/port/Headline.astro';
+import Pagination from '~/components/blog/Pagination.astro';
+
+export const prerender = true;
+
+export const getStaticPaths = (async ({ paginate }) => {
+  return await getStaticPathsPortfolioTag({ paginate });
+}) satisfies GetStaticPaths;
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
+const { page, tag } = Astro.props as Props;
+
+const currentPage = page.currentPage ?? 1;
+
+const metadata = {
+  title: `Portfolio by tag '${tag}'${currentPage > 1 ? ` — Page ${currentPage} ` : ''}`,
+  robots: {
+    index: portfolioTagRobots?.index,
+    follow: portfolioTagRobots?.follow,
+  },
+};
+---
+
+<Layout metadata={metadata}>
+  <section class='px-4 md:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl'>
+    <Headline>Tag: {tag}</Headline>
+    <PortList posts={page.data} />
+    <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
+  </section>
+</Layout>
