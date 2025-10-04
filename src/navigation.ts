@@ -50,19 +50,19 @@ export const headerData = {
       links: [
         {
           text: 'Restaurant & Food Delivery',
-          href: getPermalink('/landing/restaurant-food-delivery'),
+          href: getPermalink('/solutions/restaurant-food-delivery'),
         },
         {
           text: 'Resort & Hotel Booking',
-          href: getPermalink('/landing/sales'),
+          href: getPermalink('/solutions/resort-hotel-booking'),
         },
         {
           text: 'Logistics, Cargo & Transportation',
-          href: getPermalink('/landing/product'),
+          href: getPermalink('/solutions/logistics-cargo-transportation'),
         },
         {
           text: 'Nonprofit & Charity',
-          href: getPermalink('/landing/click-through'),
+          href: getPermalink('/solutions/nonprofit-charity'),
         },
         // {
         //   text: 'Coming Soon or Pre-Launch',
@@ -75,19 +75,19 @@ export const headerData = {
       ],
     },
     {
-      text: 'AI integrations',
+      text: 'AI automations',
       links: [
         {
           text: 'Operations',
-          href: getPermalink('#'),
+          href: getPermalink('/ai-automations/operations'),
         },
         {
           text: 'Marketing',
-          href: getPermalink('#'),
+          href: getPermalink('/ai-automations/marketing'),
         },
         {
           text: 'Sales',
-          href: getPermalink('#'),
+          href: getPermalink('/ai-automations/sales'),
         },
         // {
         //   text: 'Marketing Automation',
