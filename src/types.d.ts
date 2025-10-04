@@ -44,6 +44,51 @@ export interface Post {
   readingTime?: number;
 }
 
+export interface Portfolio {
+  /** A unique ID number that identifies a portfolio item. */
+  id: string;
+  
+  /** A portfolio item's unique slug for URL generation. */
+  slug: string;
+  
+  /**  */
+  permalink: string;
+
+  /**  */
+  publishDate: Date;
+  /**  */
+  updateDate?: Date;
+
+  /**  */
+  title: string;
+  /** Optional summary of portfolio item. */
+  excerpt?: string;
+  /**  */
+  image?: ImageMetadata | string;
+
+  /** Portfolio category (e.g., "web-design", "mobile-app", "branding") */
+  category?: string;
+  /**  */
+  tags?: string[];
+  /**  */
+  client?: string;
+
+  /** Project details */
+  projectUrl?: string;
+  technologies?: string[];
+  featured?: boolean;
+
+  /**  */
+  metadata?: MetaData;
+
+  /**  */
+  draft?: boolean;
+
+  /**  */
+  Content?: AstroComponentFactory;
+  content?: string;
+}
+
 export interface Taxonomy {
   slug: string;
   title: string;
