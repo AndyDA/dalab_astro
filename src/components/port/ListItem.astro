@@ -2,7 +2,7 @@
 import type { ImageMetadata } from 'astro';
 import { Icon } from 'astro-icon/components';
 import Image from '~/components/common/Image.astro';
-import PortTags from '~/components/port/Tags.astro';
+import Badge from '~/components/ui/Badge.astro';
 
 import type { Portfolio } from '~/types';
 
@@ -107,12 +107,16 @@ const link = getPermalink(post.permalink, 'page');
 
     {post.excerpt && <p class='flex-grow text-muted dark:text-slate-400 text-lg'>{post.excerpt}</p>}
     {
-      post.tags && Array.isArray(post.tags) ? (
+      post.technologies && post.technologies.length > 0 && (
         <footer class='mt-5'>
-          <PortTags tags={post.tags} />
+          <div class='flex flex-wrap gap-2'>
+            {post.technologies.map((tech) => (
+              <Badge variant='primary' size='xs'>
+                {tech}
+              </Badge>
+            ))}
+          </div>
         </footer>
-      ) : (
-        <Fragment />
       )
     }
   </div>

@@ -1,6 +1,7 @@
 ---
 import type { Portfolio } from '~/types';
 import Image from '~/components/common/Image.astro';
+import Badge from '~/components/ui/Badge.astro';
 import { findImage } from '~/utils/images';
 import { getPermalink } from '~/utils/permalinks';
 
@@ -64,4 +65,16 @@ const link = getPermalink(post.permalink, 'page');
   </h3>
 
   <p class='text-muted dark:text-slate-400 text-lg'>{post.excerpt}</p>
+
+  {
+    post.technologies && post.technologies.length > 0 && (
+      <div class='mt-4 flex flex-wrap gap-2'>
+        {post.technologies.map((tech) => (
+          <Badge variant='primary' size='xs'>
+            {tech}
+          </Badge>
+        ))}
+      </div>
+    )
+  }
 </article>
