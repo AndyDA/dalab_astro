@@ -3,6 +3,7 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 import Content from '~/components/widgets/Content.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Hero from '~/components/widgets/Hero.astro';
+import Steps from '~/components/widgets/Steps.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
@@ -29,62 +30,106 @@ const metadata = {
 
   <Features2
     title="Disciplines"
-    subtitle="Discover our selection below to streamline and elevate your projects."
+    subtitle="Custom e-commerce development builds tailored, scalable online stores from scratch, offering high performance, unique branding, and specialized integrations (ERP, CRM) to meet specific business needs."
     columns={3}
     items={[
       {
-        title: 'Product Strategy',
+        title: 'Platform Selection & Architecture Design',
         description:
-          'We conceptualise products that stand out with desirable features, we create concepts to demonstrate product ideas and plan product roadmaps.',
-        icon: 'tabler:bulb',
+          'We architect custom solutions built on modern frameworks (React, Node.js) that scale infinitely without platform limitations.',
+        icon: 'tabler:building-arch',
       },
       {
-        title: 'User Research',
+        title: 'Mobile-First & Responsive Developmen',
         description:
-          'In user research programs we combine quantitative and qualitative methods to discover user needs and pain points, to create models of user behaviour and to provide a reliable foundation for strategic decisions.',
-        icon: 'tabler:home-star',
+          '50%+ of e-commerce traffic is mobile—we optimize every interaction for seamless shopping on phones and tablets.',
+        icon: 'tabler:device-mobile',
       },
       {
-        title: 'UX Design',
-        description: `By combining iterative design with research we create the logic of user journeys, the structure of layouts and the interactions that make up the core of how people use the application.`,
-        icon: 'tabler:tool',
+        title: 'Performance Optimization & Speed',
+        description: `Every second of delay costs conversions; we engineer sub-3-second load times through CDN, image optimization, and code splitting.`,
+        icon: 'tabler:bolt',
       },
       {
-        title: 'UI Design',
+        title: 'Payment Gateway & Security Integration',
         description:
-          'The subtle ways in which we use colour, typography and graphics to create a harmonious visual style comes to represent an application across different platforms.',
-        icon: 'tabler:shopping-cart',
+          'Enterprise-grade PCI DSS compliance, multi-gateway support (Stripe, PayPal), and fraud detection protect your customers and revenue.',
+        icon: 'tabler:lock',
       },
       {
-        title: 'Protopyping and User Testing',
+        title: 'Conversion Rate Optimization (CRO)',
         description:
-          'We create interactive prototypes that capture the experience of a product module and we use behavioural measures to discover which interaction concepts bring the best results.',
-        icon: 'tabler:message-dots',
+          'We data-drive every design decision through A/B testing, funnel analysis, and checkout optimization to turn browsers into buyers.',
+        icon: 'tabler:chart-line',
       },
       {
-        title: 'Usability Audit',
+        title: 'Emerging Technologies (AR/VR, Voice Commerce)',
         description:
-          'Our usability audit covers both the UX and the UI design of an application, highlighting how design can contribute to improved results. The usability audit includes analysis and recommendations.',
-        icon: 'tabler:building-store',
+          'Next-generation shopping experiences—virtual try-ons, 3D product previews, and immersive AR let customers "try before they buy."',
+        icon: 'tabler:cube',
       },
       {
-        title: 'Web Development',
+        title: 'SEO & Content Optimization',
         description:
-          'We create web applications using scalable technologies with strong capabilities both in terms of frontend and backend.',
-        icon: 'tabler:seo',
+          'We build stores that rank organically in Google, capturing high-intent buyer traffic at every step of the customer journey.',
+        icon: 'tabler:search',
       },
       {
-        title: 'Text',
-        description: `Secure Payment Solutions: We integrate trusted payment gateways and implement robust security measures, ensuring your customers shop with confidence while you meet PCI compliance standards.`,
-        icon: 'tabler:credit-card-pay',
+        title: 'Inventory & Order Management',
+        description: `Real-time inventory sync, automated order processing, and WMS integration eliminate manual work and prevent overselling.`,
+        icon: 'tabler:package',
       },
       {
-        title: 'Text',
+        title: 'Scalability & Enterprise Infrastructure',
         description:
-          'We optimize your Drupal solution for lightning-fast load times and smooth checkout experiences that reduce cart abandonment and boost conversions.',
+          'Built to handle growth from thousands to millions of transactions; auto-scaling infrastructure means no downtime during traffic spikes.',
         icon: 'tabler:load-balancer',
       },
     ]}
+  />
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    title="Procedure We Walk On For Our Custom eCommerce Software Development "
+    tagline="Development Process"
+    isReversed={true}
+    items={[
+      {
+        title: 'Planning',
+        description: 'We start development work by collecting information from the stakeholders before starting custom website development.',
+        icon: 'tabler:number-1',
+      },
+      {
+        title: 'Designing',
+        description: 'Proper UI/UX is prepared and defined in the requirement specifications. This is important part of selecting a design architecture.',
+        icon: 'tabler:number-2',
+      },
+      {
+        title: 'Development',
+        description: 'Developers start development work as per the design structure and selected technology platform, framework and methodologies.',      
+        icon: 'tabler:number-3',
+      },
+      {
+        title: 'Testing',
+        description: 'Being a recognized e-commerce development company, we focus on the quality to ensure end-user have no challenges with performance.',
+        icon: 'tabler:number-4',
+      },
+      {
+        title: 'Deployment',
+        description: 'After approval from stakeholders, we deploy website at server. In addition, we ensure that website have no performance issues and downtime.',
+        icon: 'tabler:number-5',
+      },
+      {
+        title: 'Maintenance',
+        description: 'You can count on us for ongoing maintenance and support for your new website, including updates, backups, security measures, and more. We’re here to make your website something you never have to worry about.',
+        icon: 'tabler:number-6',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1536816579748-4ecb3f03d72a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
+      alt: 'Steps image',
+    }}
   />
 
   <!-- Content Widget **************** -->

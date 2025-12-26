@@ -32,17 +32,17 @@ export const headerData = {
           href: getPermalink('/services/drupal-development'),
         },
         {
-          text: 'UI/UX Design',
-          href: getPermalink('/services/ui-ux-design'),
-        },
-        {
           text: 'E-commerce',
           href: getPermalink('/services/e-commerce'),
         },
         {
-          text: 'Branding',
-          href: getPermalink('/services/branding'),
+          text: 'UI/UX Design',
+          href: getPermalink('/services/ui-ux-design'),
         },
+        // {
+        //   text: 'Branding',
+        //   href: getPermalink('/services/branding'),
+        // },
       ],
     },
     {
