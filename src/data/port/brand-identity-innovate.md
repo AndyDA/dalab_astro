@@ -1,7 +1,7 @@
 ---
 title: 'Corporate Brand Identity'
 excerpt: 'Complete brand identity design for a tech startup, including logo, colors, and visual guidelines'
-category: 'branding'
+category: 'Branding'
 tags: ['Brand Design', 'Logo Design', 'Visual Identity']
 client: 'InnovateTech'
 technologies: ['Adobe Illustrator', 'Figma', 'Adobe Photoshop']

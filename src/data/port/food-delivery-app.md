@@ -1,7 +1,7 @@
 ---
 title: 'Food Delivery App'
 excerpt: 'Multi-vendor food delivery mobile application with real-time tracking'
-category: 'mobile-app'
+category: 'Mobile-App'
 tags: ['Flutter', 'Node.js', 'MongoDB']
 client: 'QuickEats'
 technologies: ['Flutter', 'Node.js', 'MongoDB', 'Socket.io', 'Google Maps']
