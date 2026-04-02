@@ -1,0 +1,167 @@
+<form id="subscribe-form" class="listmonk-form">
+  <div>
+    <h3>Subscribe to our newsletter</h3>
+
+    <p><input type="email" name="email" id="email" required placeholder="E-mail" /></p>
+    <p><input type="text" name="name" id="name" placeholder="Name (optional)" /></p>
+
+    <input type="hidden" name="list_id" value="402eb8c4-563a-49ff-8910-bfca103ffd56" />
+
+    <button type="submit">Subscribe</button>
+  </div>
+</form>
+
+<script>
+  import { actions } from "astro:actions";
+  import { isInputError } from "astro:actions";
+
+  // Helper function to clear previous messages
+  function clearPreviousMessage(id: string) {
+    const messageElement = document.getElementById(id);
+    if (messageElement) {
+      messageElement.remove();
+    }
+  }
+
+  // Helper function to add message element
+  function addMessageElement(
+    message: string,
+    type: "error" | "success",
+    element: HTMLElement
+  ) {
+    const p = document.createElement("p");
+    p.id = "message";
+    p.className = `message ${type === "success" ? "text-green-600" : "text-red-600"} mt-2 px-2 font-medium`;
+    p.innerText = message;
+    element.appendChild(p);
+  }
+
+  // Helper function to clear input
+  function clearInput(id: string) {
+    const input = document.getElementById(id) as HTMLInputElement;
+    if (input) input.value = "";
+  }
+
+  // Get form element
+  const form = document.getElementById("subscribe-form") as HTMLFormElement;
+
+  // Handle form submission
+  async function handleFormSubmit(e: Event) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    try {
+      // Call the subscribe action
+      const result = await actions.subscribe(formData);
+
+      clearPreviousMessage("message");
+
+      if (result.error) {
+        if (isInputError(result.error)) {
+          const message = result.error.fields.email?.[0] || result.error.fields.name?.[0];
+          addMessageElement(message || "Please check your input.", "error", form);
+        } else {
+          addMessageElement("An error occurred. Please try again.", "error", form);
+        }
+      } else if (result.data) {
+        if (result.data.listmonkErrors) {
+          const message = result.data.listmonkErrors.message || result.data.message;
+          addMessageElement(message, "error", form);
+        } else {
+          const message = result.data.message || "Successfully subscribed!";
+          clearInput("email");
+          clearInput("name");
+          addMessageElement(message, "success", form);
+        }
+      }
+    } catch (error) {
+      clearPreviousMessage("message");
+      addMessageElement("An unexpected error occurred.", "error", form);
+      console.error("Subscription error:", error);
+    }
+  }
+
+  // Add event listener
+  if (form) {
+    form.addEventListener("submit", handleFormSubmit);
+  }
+</script>
+
+<style>
+  .listmonk-form {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .listmonk-form div {
+    padding: 1.5rem;
+    border-radius: 8px;
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+  }
+
+  .listmonk-form h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #1f2937;
+  }
+
+  .listmonk-form input[type="email"],
+  .listmonk-form input[type="text"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    transition: border-color 0.2s;
+  }
+
+  .listmonk-form input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    ring: 2px;
+    ring-color: rgba(59, 130, 246, 0.1);
+  }
+
+  .listmonk-form button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+  .listmonk-form button:hover {
+    background-color: #2563eb;
+  }
+
+  .listmonk-form button:active {
+    background-color: #1d4ed8;
+  }
+
+  .listmonk-form p {
+    margin: 0.75rem 0;
+  }
+
+  .message {
+    padding: 0.75rem;
+    border-radius: 6px;
+    margin-top: 1rem;
+  }
+
+  .text-green-600 {
+    background-color: #dcfce7;
+    color: #16a34a;
+  }
+
+  .text-red-600 {
+    background-color: #fee2e2;
+    color: #dc2626;
+  }
+</style>
