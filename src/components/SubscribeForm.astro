@@ -1,19 +1,26 @@
-<form id="subscribe-form" class="listmonk-form">
+<form id='subscribe-form' class='listmonk-form'>
   <div>
     <h3>Subscribe to our newsletter</h3>
 
-    <p><input type="email" name="email" id="email" required placeholder="E-mail" /></p>
-    <p><input type="text" name="name" id="name" placeholder="Name (optional)" /></p>
+    <p><input type='email' name='email' id='email' required placeholder='E-mail' /></p>
+    <p><input type='text' name='name' id='name' placeholder='Name (optional)' /></p>
 
-    <input type="hidden" name="list_id" value="402eb8c4-563a-49ff-8910-bfca103ffd56" />
+    <input type='hidden' name='list_id' value='402eb8c4-563a-49ff-8910-bfca103ffd56' />
 
-    <button type="submit">Subscribe</button>
+    <button type='submit'>Subscribe</button>
   </div>
 </form>
 
 <script>
-  import { actions } from "astro:actions";
-  import { isInputError } from "astro:actions";
+  // Configuration
+  const LISTMONK_URL = 'https://sub.dalab.top';
+  const LIST_UUID = '402eb8c4-563a-49ff-8910-bfca103ffd56';
+
+  // Helper function to validate email
+  function isValidEmail(email: string): boolean {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }
 
   // Helper function to clear previous messages
   function clearPreviousMessage(id: string) {
@@ -24,14 +31,10 @@
   }
 
   // Helper function to add message element
-  function addMessageElement(
-    message: string,
-    type: "error" | "success",
-    element: HTMLElement
-  ) {
-    const p = document.createElement("p");
-    p.id = "message";
-    p.className = `message ${type === "success" ? "text-green-600" : "text-red-600"} mt-2 px-2 font-medium`;
+  function addMessageElement(message: string, type: 'error' | 'success', element: HTMLElement) {
+    const p = document.createElement('p');
+    p.id = 'message';
+    p.className = `message ${type === 'success' ? 'text-green-600' : 'text-red-600'} mt-2 px-2 font-medium`;
     p.innerText = message;
     element.appendChild(p);
   }
@@ -39,52 +42,91 @@
   // Helper function to clear input
   function clearInput(id: string) {
     const input = document.getElementById(id) as HTMLInputElement;
-    if (input) input.value = "";
+    if (input) input.value = '';
+  }
+
+  // Send subscription to Listmonk
+  async function subscribeToListmonk(email: string, name: string) {
+    const response = await fetch(`${LISTMONK_URL}/api/public/subscription`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: email,
+        name: name || '',
+        list_uuids: [LIST_UUID],
+      }),
+    });
+
+    if (!response.ok) {
+      const text = await response.text();
+      throw new Error(`HTTP ${response.status}: ${text}`);
+    }
+
+    const contentType = response.headers.get('content-type');
+    if (contentType && contentType.includes('application/json')) {
+      return await response.json();
+    } else {
+      const text = await response.text();
+      throw new Error('Expected JSON response but got HTML');
+    }
   }
 
   // Get form element
-  const form = document.getElementById("subscribe-form") as HTMLFormElement;
+  const form = document.getElementById('subscribe-form') as HTMLFormElement;
 
   // Handle form submission
   async function handleFormSubmit(e: Event) {
     e.preventDefault();
 
     const formData = new FormData(form);
+    const email = (formData.get('email') as string).trim();
+    const name = (formData.get('name') as string)?.trim() || '';
+
+    clearPreviousMessage('message');
+
+    // Validate email
+    if (!email) {
+      addMessageElement('Email is required.', 'error', form);
+      return;
+    }
+
+    if (!isValidEmail(email)) {
+      addMessageElement('Please enter a valid email address.', 'error', form);
+      return;
+    }
+
+    // Disable button during submission
+    const submitButton = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+    const originalText = submitButton.innerText;
+    submitButton.disabled = true;
+    submitButton.innerText = 'Subscribing...';
 
     try {
-      // Call the subscribe action
-      const result = await actions.subscribe(formData);
+      const result = await subscribeToListmonk(email, name);
 
-      clearPreviousMessage("message");
+      addMessageElement('Successfully subscribed! Check your email to confirm.', 'success', form);
+      clearInput('email');
+      clearInput('name');
+    } catch (error: any) {
+      console.error('Subscription error:', error);
 
-      if (result.error) {
-        if (isInputError(result.error)) {
-          const message = result.error.fields.email?.[0] || result.error.fields.name?.[0];
-          addMessageElement(message || "Please check your input.", "error", form);
-        } else {
-          addMessageElement("An error occurred. Please try again.", "error", form);
-        }
-      } else if (result.data) {
-        if (result.data.listmonkErrors) {
-          const message = result.data.listmonkErrors.message || result.data.message;
-          addMessageElement(message, "error", form);
-        } else {
-          const message = result.data.message || "Successfully subscribed!";
-          clearInput("email");
-          clearInput("name");
-          addMessageElement(message, "success", form);
-        }
-      }
-    } catch (error) {
-      clearPreviousMessage("message");
-      addMessageElement("An unexpected error occurred.", "error", form);
-      console.error("Subscription error:", error);
+      const errorMessage = error.message?.includes('already')
+        ? 'This email is already subscribed.'
+        : 'An error occurred. Please try again later.';
+
+      addMessageElement(errorMessage, 'error', form);
+    } finally {
+      // Re-enable button
+      submitButton.disabled = false;
+      submitButton.innerText = originalText;
     }
   }
 
   // Add event listener
   if (form) {
-    form.addEventListener("submit", handleFormSubmit);
+    form.addEventListener('submit', handleFormSubmit);
   }
 </script>
 
@@ -108,8 +150,8 @@
     color: #1f2937;
   }
 
-  .listmonk-form input[type="email"],
-  .listmonk-form input[type="text"] {
+  .listmonk-form input[type='email'],
+  .listmonk-form input[type='text'] {
     width: 100%;
     padding: 0.75rem;
     border: 1px solid #d1d5db;

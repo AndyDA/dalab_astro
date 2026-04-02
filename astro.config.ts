@@ -23,7 +23,7 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
 
 export default defineConfig({
   site: 'https://andyda.github.io',
-  output: 'server', // Changed from 'static' to enable Astro Actions
+  output: 'static', // Static output for GitHub Pages
 
   integrations: [
     tailwind({
