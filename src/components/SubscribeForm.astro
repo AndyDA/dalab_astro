@@ -4,18 +4,53 @@
   id='subscribe-form'
   action='https://sub.dalab.top/subscription/form'
   method='POST'
-  class='listmonk-form'
+  class='flex flex-col backdrop-blur bg-white border dark:bg-slate-900 rounded-lg border-gray-200 dark:border-gray-700 lg:p-8 max-w-xl mx-auto p-4 shadow sm:p-6 w-full'
   target='hidden_iframe'
 >
   <div>
-    <h3>Subscribe to our newsletter</h3>
+    <h3
+      class='font-bold font-heading leading-tighter tracking-tighter md:text-4xl text-3xl text-heading mb-10 text-center'
+    >
+      Subscribe to our newsletter
+    </h3>
 
-    <p><input type='email' name='email' id='email' required placeholder='E-mail' /></p>
-    <p><input type='text' name='name' id='name' placeholder='Name (optional)' /></p>
+    <div class='mb-6'>
+      <input
+        type='email'
+        name='email'
+        id='email'
+        required
+        placeholder='E-mail'
+        class='block bg-white border border-gray-200 dark:bg-slate-900 dark:border-gray-700 px-4 py-3 rounded-lg text-md w-full'
+      />
+    </div>
+
+    <div class='mb-6'>
+      <input
+        type='text'
+        name='name'
+        id='name'
+        placeholder='Name (optional)'
+        class='block bg-white border border-gray-200 dark:bg-slate-900 dark:border-gray-700 px-4 py-3 rounded-lg text-md w-full'
+      />
+    </div>
+
+    <!-- Honeypot field - hidden from users, catches bots -->
+    <input
+      type='text'
+      name='website'
+      id='website'
+      style='display:none;'
+      tabindex='-1'
+      autocomplete='off'
+      aria-hidden='true'
+    />
 
     <input type='hidden' name='l' value='402eb8c4-563a-49ff-8910-bfca103ffd56' />
 
-    <button type='submit'>Subscribe</button>
+    <div class='grid mt-10'>
+      <button type='submit' class='btn-primary'>Subscribe</button>
+    </div>
 
     <div id='message-container'></div>
   </div>
@@ -25,15 +60,65 @@
   const form = document.getElementById('subscribe-form') as HTMLFormElement;
   const messageContainer = document.getElementById('message-container') as HTMLElement;
 
-  form.addEventListener('submit', function () {
+  function showMessage(text: string, type: 'success' | 'error') {
+    messageContainer.innerHTML = `<p class="message ${type}">${text}</p>`;
+  }
+
+  function validateEmail(email: string): boolean {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email) && email.length <= 255;
+  }
+
+  // Rate limiting - max 1 submission per 60 seconds
+  function canSubmit(): boolean {
+    const lastSubmit = localStorage.getItem('lastSubscribeSubmit');
+    if (lastSubmit) {
+      const timeDiff = Date.now() - parseInt(lastSubmit);
+      if (timeDiff < 60000) {
+        // 60 seconds
+        const secondsLeft = Math.ceil((60000 - timeDiff) / 1000);
+        showMessage(`Please wait ${secondsLeft} seconds before trying again.`, 'error');
+        return false;
+      }
+    }
+    return true;
+  }
+
+  form.addEventListener('submit', function (e) {
+    messageContainer.innerHTML = ''; // Clear previous messages
+
+    // Honeypot check - if filled, it's a bot
+    const honeypot = (document.getElementById('website') as HTMLInputElement)?.value;
+    if (honeypot) {
+      e.preventDefault();
+      console.log('Bot detected - honeypot filled');
+      return false;
+    }
+
+    // Email validation
+    const emailInput = document.getElementById('email') as HTMLInputElement;
+    if (!validateEmail(emailInput.value.trim())) {
+      e.preventDefault();
+      showMessage('Please enter a valid email address.', 'error');
+      return false;
+    }
+
+    // Rate limiting
+    if (!canSubmit()) {
+      e.preventDefault();
+      return false;
+    }
+
     const submitButton = form.querySelector('button[type="submit"]') as HTMLButtonElement;
     submitButton.disabled = true;
     submitButton.innerText = 'Subscribing...';
 
+    // Store submission time
+    localStorage.setItem('lastSubscribeSubmit', Date.now().toString());
+
     // Show success message after a short delay
     setTimeout(() => {
-      messageContainer.innerHTML =
-        '<p class="message success">Successfully subscribed! Check your email to confirm.</p>';
+      showMessage('Successfully subscribed! Check your email to confirm.', 'success');
       submitButton.disabled = false;
       submitButton.innerText = 'Subscribe';
       form.reset();
@@ -42,66 +127,6 @@
 </script>
 
 <style>
-  .listmonk-form {
-    max-width: 500px;
-    margin: 0 auto;
-  }
-
-  .listmonk-form div {
-    padding: 1.5rem;
-    border-radius: 8px;
-    background-color: #f9fafb;
-    border: 1px solid #e5e7eb;
-  }
-
-  .listmonk-form h3 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: #1f2937;
-  }
-
-  .listmonk-form input[type='email'],
-  .listmonk-form input[type='text'] {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #d1d5db;
-    border-radius: 6px;
-    font-size: 0.875rem;
-    transition: border-color 0.2s;
-  }
-
-  .listmonk-form input:focus {
-    outline: none;
-    border-color: #3b82f6;
-    ring: 2px;
-    ring-color: rgba(59, 130, 246, 0.1);
-  }
-
-  .listmonk-form button {
-    width: 100%;
-    padding: 0.75rem;
-    background-color: #3b82f6;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.2s;
-  }
-
-  .listmonk-form button:hover {
-    background-color: #2563eb;
-  }
-
-  .listmonk-form button:active {
-    background-color: #1d4ed8;
-  }
-
-  .listmonk-form p {
-    margin: 0.75rem 0;
-  }
-
   .message {
     padding: 0.75rem;
     border-radius: 6px;
