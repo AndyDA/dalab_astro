@@ -1,224 +1,340 @@
 ---
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Content from '~/components/widgets/Content.astro';
+import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Hero from '~/components/widgets/Hero.astro';
-import Testimonials from '~/components/widgets/Testimonials.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import Steps from '~/components/widgets/Steps.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
-  title: 'Services',
+  title: 'Drupal Development — Fast. Scalable. No bullshit.',
+  description:
+    'We build Drupal platforms that actually perform. Clean architecture. Minimal frontend. Zero unnecessary complexity.',
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
+  <!-- Hero ******************* -->
 
   <Hero
-    tagline="Drupal Development Services"
-    title="A Drupal development company that puts you first"
-    subtitle="Got Drupal on your mind? You've come to the right place. At DALAB Agency, Drupal development is what we live and breathe, with a team of world-class Drupal specialists backing every project. Why not schedule a free consultation? There's no pressure—just a chance for us to learn about your goals and see how we might help."
-    actions={[{ variant: 'primary', target: '_blank', text: 'Contact Us', href: '/' }]}
-    image={{
-      src: '~/assets/images/drupal-hr.png',
-      alt: 'Drupal Hero Image',
-    }}
+    tagline='Drupal Development'
+    title='Fast. Scalable.<br />No bullshit.'
+    subtitle='We build Drupal platforms that actually perform. Clean architecture. Minimal frontend. Zero unnecessary complexity. If your project needs speed, structure, and long-term stability — this is it.'
+    actions={[
+      { variant: 'primary', text: 'Get Estimate', href: '/contact' },
+      { text: 'Book a Call', href: '/contact' },
+    ]}
   />
 
-  <!-- Features2 Widget ************** -->
+  <!-- Trust / Quick Proof ******************* -->
+
+  <Stats
+    stats={[
+      { amount: '50+', title: 'Projects delivered', icon: 'tabler:check' },
+      { amount: '<48h', title: 'First response time', icon: 'tabler:rocket' },
+      { amount: '100%', title: 'Clean architecture', icon: 'tabler:code' },
+    ]}
+  />
+
+  <!-- What You Get ******************* -->
 
   <Features2
-    title="Explore our diverse templates"
-    subtitle="Discover our selection below to streamline and elevate your projects."
-    columns={3}
+    title='What you get'
+    subtitle="Everything you need for a solid Drupal platform — nothing you don't."
+    columns={2}
     items={[
       {
-        title: 'Drupal 10 Devlopment',
+        title: 'Custom Drupal Development',
         description:
-          'We deliver enterprise-level digital solutions spanning full implementation, custom development, and headless Drupal architectures, all leveraging the advanced capabilities of Drupal 10.',
-        icon: 'tabler:bulb',
+          'Built for your exact use case. No generic setups. Content architecture that makes sense, scalable data models, multilingual & multi-site ready, built to grow without breaking.',
+        icon: 'tabler:database',
       },
       {
-        title: 'Upgrade & Migration',
+        title: 'Twig-first Frontend',
         description:
-          'This is one of our core competencies. Discover our proven approach to seamless Drupal migrations and flexible upgrade engagement models.',
-        icon: 'tabler:home-star',
+          'No heavy JS. No hacks. Clean Twig templates with a component-based structure, modern CSS (scalable and predictable), fast by default.',
+        icon: 'tabler:layout-2',
       },
       {
-        title: 'Maintenance & Support',
-        description: `We provide enterprise-grade Drupal support around the clock, combining technical expertise with genuine commitment to your success.`,
-        icon: 'tabler:tool',
-      },
-      {
-        title: 'E-commerce',
+        title: 'Headless Drupal',
         description:
-          'Looking to power your e-commerce with Drupal? DALAB Agency specializes in Drupal Commerce solutions with experts who understand both content and commerce.',
-        icon: 'tabler:shopping-cart',
-      },
-      {
-        title: 'Drupal Consulting',
-        description:
-          'We help retailers reimagine their online presence and guide innovative e-commerce experiences.',
-        icon: 'tabler:message-dots',
-      },
-      {
-        title: 'UI/UX Design',
-        description:
-          'We offer customized, adaptable, accessible, consistent, and mobile-optimized solutions that drive conversions and enhance the shopping experience.',
-        icon: 'tabler:building-store',
-      },
-      {
-        title: 'Drupal SEO',
-        description:
-          'Get found on Google, Bing and DuckDuckGo when customers are ready to buy. We optimize your Drupal system to capture high-value search traffic.',
-        icon: 'tabler:seo',
-      },
-      {
-        title: 'Payment Integration & Security',
-        description: `Secure Payment Solutions: We integrate trusted payment gateways and implement robust security measures, ensuring your customers shop with confidence while you meet PCI compliance standards.`,
-        icon: 'tabler:credit-card-pay',
+          'Drupal as backend, modern frontend on top. REST / JSON:API / GraphQL. Astro frontends. Static + dynamic where it matters. Built for performance and SEO.',
+        icon: 'tabler:plug',
       },
       {
         title: 'Performance Optimization',
         description:
-          'We optimize your Drupal solution for lightning-fast load times and smooth checkout experiences that reduce cart abandonment and boost conversions.',
-        icon: 'tabler:load-balancer',
+          'Speed is not optional. Core Web Vitals focused, lean CSS approach, smart caching (Drupal + CDN). We remove bottlenecks — not hide them.',
+        icon: 'tabler:bolt',
+      },
+      {
+        title: 'Migration & Upgrades',
+        description:
+          'No data loss. No chaos. Drupal 7 → 10 / 11, clean migration strategy, legacy cleanup, future-proof setup that will not need another migration in 2 years.',
+        icon: 'tabler:arrows-exchange',
+      },
+      {
+        title: 'Maintenance & Support',
+        description:
+          'Keep it stable. Keep it secure. Updates & patches, bug fixing, performance tuning, long-term support — we stay with you after launch.',
+        icon: 'tabler:tool',
       },
     ]}
   />
 
-  <!-- Content Widget **************** -->
+  <!-- What We Build ******************* -->
 
   <Content
     isReversed
+    title='What we build'
+    subtitle='We work across industries where structured content, security, and long-term maintainability actually matter.'
     items={[
       {
-        title: 'Drupal-First Specialists',
+        title: 'Government & Municipalities',
         description:
-          'We live and breathe Drupal, with deep expertise across all versions and modules.',
-        icon: 'tabler:wand',
+          'Secure, accessible public-sector websites that improve citizen engagement, transparency, and service delivery — compliant with regulatory standards.',
+        icon: 'tabler:building-community',
       },
       {
-        title: 'Proven Track Record',
+        title: 'Healthcare',
         description:
-          'Successfully delivered 200+ Drupal projects for businesses of all sizes, from startups to enterprises.',
-        icon: 'tabler:settings',
+          'Patient portals and healthcare websites built with data security and compliance in mind, improving accessibility for patients and efficiency for staff.',
+        icon: 'tabler:heart-rate-monitor',
       },
       {
-        title: 'Certified Developers',
+        title: 'Education',
         description:
-          'Our team holds official Drupal certifications and contributes to the community of Drupal developers',
-        icon: 'tabler:presentation',
+          'Intuitive platforms for admissions, student services, and institutional communication — connecting students, parents, and faculty in one place.',
+        icon: 'tabler:school',
       },
       {
-        title: 'Future-Ready Solutions',
+        title: 'Nonprofit',
         description:
-          "We build with Drupal 10's latest features and emerging web technologies to ensure your solution stays ahead of the curve.",
-        icon: 'tabler:carousel-horizontal',
+          'Donation platforms and mission-driven websites that help nonprofits reach donors, raise awareness, and amplify community impact.',
+        icon: 'tabler:heart-handshake',
+      },
+      {
+        title: 'Ecommerce',
+        description:
+          'High-performing, scalable stores built to maximize conversions, improve customer retention, and handle real traffic without breaking.',
+        icon: 'tabler:shopping-cart',
+      },
+      {
+        title: 'Media & Entertainment',
+        description:
+          'Dynamic content management systems built for scale — enabling seamless media delivery and meaningful audience engagement.',
+        icon: 'tabler:device-tv',
       },
     ]}
     image={{
       src: '~/assets/images/drupal-expertise.png',
-      alt: 'Expertixe & Experience Image',
+      alt: 'Drupal projects we build',
     }}
   >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Expertise & Experience</h3>
+    <Fragment slot='content'>
+      <h3 class='text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2'>Industries we serve</h3>
     </Fragment>
   </Content>
 
-  <!-- Content Widget **************** -->
+  <!-- Process ******************* -->
 
-  <Content
-    isAfterContent
+  <Steps
+    title='How it works'
+    subtitle='A clear, predictable process — from first conversation to long-term stability.'
+    tagline='Our process'
     items={[
       {
-        title: 'Partnership Approach',
+        title: 'Understand',
         description:
-          'We work as an extension of your team, not just another vendor. We collaborate closely with you to understand your unique needs and goals, ensuring.',
-        icon: 'tabler:clock',
+          'Business goals, content model, technical constraints, team setup. We ask the right questions before touching the code.',
+        icon: 'tabler:zoom-question',
       },
       {
-        title: 'Transparent Process',
+        title: 'Structure',
         description:
-          'Clear communication, regular updates, and no hidden surprises. We keep you informed every step of the way, so you can track progress and make informed decisions.',
-        icon: 'tabler:school',
+          'Clean Drupal architecture first. Content types, fields, relationships, and modules — planned before built, never refactored after.',
+        icon: 'tabler:sitemap',
       },
       {
-        title: '24/7 Support Available',
+        title: 'Build',
         description:
-          'Round-the-clock maintenance and support when you need it most. We ensure your website or application is always up and running smoothly.',
-        icon: 'tabler:coin',
+          'Modular, maintainable code. Twig templates, custom modules, and third-party integrations done right — readable by the next developer.',
+        icon: 'tabler:hammer',
       },
       {
-        title: 'Long-term Success Focus',
+        title: 'Optimize',
         description:
-          'We optimize for your growth, not just project completion. We build scalable solutions that adapt to your evolving needs.',
-        icon: 'tabler:file-download',
+          'Real performance, not scores. Caching, query optimization, front-end lean — measured, profiled, and genuinely improved.',
+        icon: 'tabler:gauge',
+      },
+      {
+        title: 'Launch',
+        description:
+          'Stable and predictable deployment. No surprises. Environment parity, rollback plan, and a solid release process.',
+        icon: 'tabler:rocket',
+      },
+      {
+        title: 'Scale',
+        description:
+          'Architecture built to grow. No rebuilds later — just extending what is already solid, clean, and well-documented.',
+        icon: 'tabler:trending-up',
       },
     ]}
     image={{
       src: '~/assets/images/drupal-service.png',
-      alt: 'Service & Support Image',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Service & Support</h3>
-    </Fragment>
-  </Content>
-
-  <!-- Testimonials Widget *********** -->
-
-  <Testimonials
-    title="Words from real customers"
-    testimonials={[
-      {
-        testimonial: `We were stuck on an outdated platform that couldn't handle our growing inventory. DALAB Agency migrated our entire e-commerce operation to Drupal Commerce seamlessly - zero downtime, zero lost sales. Their team understood both our technical needs and business goals. Six months later, our conversion rates are up 40% and managing products is actually enjoyable now. Worth every penny.`,
-        name: 'Sarah Chen',
-        job: 'E-commerce Director, Alpine Outdoor Gear',
-        image: {
-          src: 'https://images.unsplash.com/photo-1618835962148-cf177563c6c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=930&q=80',
-          alt: 'Sarah Chen Image',
-        },
-      },
-      {
-        testimonial: `DALAB Agency didn't just build us a website - they built us a digital ecosystem. Their Drupal expertise transformed how we manage content across 12 different product lines. The 24/7 support has been incredible too. When we had a critical issue at 2 AM before a major product launch, their team was online within minutes. They truly work as an extension of our team.`,
-        name: 'Marcus Rodriguez',
-        job: 'Digital Strategy Manager, TechFlow Industries',
-        image: {
-          src: 'https://images.unsplash.com/photo-1561406636-b80293969660?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-          alt: 'Marcus Rodriguez Image',
-        },
-      },
-      {
-        testimonial: `Our old site looked dated and loaded slowly. DALAB Agency completely reimagined our user experience while keeping all our Drupal functionality intact. The new design is stunning and mobile-optimized, plus page load times dropped by 60%. Our bounce rate plummeted and customer feedback has been overwhelmingly positive. They really know how to make Drupal beautiful and fast.`,
-        name: 'Jennifer Walsh',
-        job: 'Marketing Director, Coastal Financial Services',
-        image: {
-          src: 'https://images.unsplash.com/photo-1545167622-3a6ac756afa4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=824&q=80',
-          alt: 'Jennifer Walsh Image',
-        },
-      },
-    ]}
-    callToAction={{
-      target: '_blank',
-      text: 'More testimonials...',
-      href: 'https://github.com/onwidget/astrowind',
-      icon: 'tabler:chevron-right',
+      alt: 'Our development process',
     }}
   />
 
-  <!-- CallToAction Widget *********** -->
+  <!-- Stack ******************* -->
 
+  <Features
+    title='The stack'
+    subtitle='Chosen for performance, maintainability, and long-term stability. No trend-chasing.'
+    tagline='Technology'
+    columns={3}
+    items={[
+      {
+        title: 'Drupal 9 / 10 / 11',
+        description:
+          'The backbone. Enterprise-grade CMS with powerful content architecture, a mature ecosystem, and a clear upgrade path.',
+        icon: 'tabler:server',
+      },
+      {
+        title: 'Twig',
+        description:
+          'Clean, logic-free templating. Component-based structure that is easy to read, maintain, and hand off.',
+        icon: 'tabler:code',
+      },
+      {
+        title: 'Modern CSS (minimal JS)',
+        description:
+          'Scalable, predictable styles. No heavy frameworks where they are not needed. Fast by default, not by accident.',
+        icon: 'tabler:palette',
+      },
+      {
+        title: 'Astro (headless)',
+        description:
+          'When you need a decoupled frontend — Astro delivers fast by default, SEO-ready, and with minimal JavaScript overhead.',
+        icon: 'tabler:planet',
+      },
+      {
+        title: 'API-first approach',
+        description:
+          'REST, JSON:API, GraphQL. Drupal as a proper backend — interoperable, decoupled where it counts, integrated where it makes sense.',
+        icon: 'tabler:plug',
+      },
+      {
+        title: 'Git workflows',
+        description:
+          'Clean branching, code review, CI/CD-ready. Version control as part of the project from day one — not an afterthought.',
+        icon: 'tabler:git-branch',
+      },
+    ]}
+  />
+
+  <!-- Why This Approach ******************* -->
+
+  <Content
+    isReversed
+    title='Why this approach'
+    subtitle='Most Drupal projects fail in the same places. We built our methodology around avoiding exactly those.'
+    items={[
+      {
+        title: 'Clean architecture from day one',
+        description:
+          'No shortcuts in the content model or module structure. Good decisions made early prevent weeks of pain — and full rewrites — later.',
+        icon: 'tabler:check',
+      },
+      {
+        title: 'Fast by default',
+        description:
+          'Performance is built in, not bolted on. Lean CSS, smart caching, no bloated JS. Your site is fast before you optimise it.',
+        icon: 'tabler:check',
+      },
+      {
+        title: 'Easy to maintain',
+        description:
+          'Readable Twig, documented custom modules, standard patterns. Your team — or the next agency — can actually work on it.',
+        icon: 'tabler:check',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/drupal-hr.png',
+      alt: 'Why our Drupal approach works',
+    }}
+  >
+    <Fragment slot='content'>
+      <h3 class='text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2'>The opposite of most projects</h3>
+      <p class='text-muted mb-4'>Most Drupal sites suffer from the same problems:</p>
+      <ul class='mb-6 space-y-2 text-muted'>
+        <li class='flex items-start gap-2'>
+          <span class='text-red-500 font-bold mt-0.5'>✗</span>
+          Too much JavaScript everywhere — slow, fragile, hard to debug
+        </li>
+        <li class='flex items-start gap-2'>
+          <span class='text-red-500 font-bold mt-0.5'>✗</span>
+          Bad content structure that collapses under real editorial needs
+        </li>
+        <li class='flex items-start gap-2'>
+          <span class='text-red-500 font-bold mt-0.5'>✗</span>
+          Slow by default — performance hacked in after complaints
+        </li>
+        <li class='flex items-start gap-2'>
+          <span class='text-red-500 font-bold mt-0.5'>✗</span>
+          Impossible to maintain without the original developer
+        </li>
+      </ul>
+      <p class='font-semibold text-muted'>We build the opposite:</p>
+    </Fragment>
+  </Content>
+
+  <!-- Engagement Models ******************* -->
+
+  <Features2
+    title='Work with us'
+    subtitle='Choose the engagement model that fits your project and team structure.'
+    tagline='Engagement'
+    columns={3}
+    items={[
+      {
+        title: 'Project-based',
+        description:
+          'Fixed scope, clear deliverables, predictable budget. Best for well-defined projects with a clear start and end. You know what you pay before we start.',
+        icon: 'tabler:file-invoice',
+      },
+      {
+        title: 'Hourly',
+        description:
+          'Flexible engagement for ongoing work, audits, or when scope is not fully defined. Pay for actual time — nothing more.',
+        icon: 'tabler:clock',
+      },
+      {
+        title: 'Monthly support',
+        description:
+          'Dedicated hours every month for maintenance, improvements, and updates. Keep your platform stable, secure, and moving forward.',
+        icon: 'tabler:calendar-stats',
+      },
+    ]}
+  />
+
+  <!-- Final CTA ******************* -->
   <CallToAction
+    title='Ready to build something solid?'
+    subtitle="No pitch decks. No pressure. Just a conversation about your project and whether we're the right fit."
+    tagline="Let's talk"
     actions={[
       {
         variant: 'primary',
-        text: 'Start exploring',
-        href: '/',
+        text: 'Get Estimate',
+        href: '/contact',
+      },
+      {
+        text: 'Book a Call',
+        href: '/contact',
       },
     ]}
-    title="Dive into our template collection"
-    subtitle="Whether you're in business, design, or education, our templates are here to elevate your projects."
   />
 </Layout>
