@@ -28,6 +28,10 @@ export const headerData = {
       text: 'Services',
       links: [
         {
+          text: 'Web Design & Development',
+          href: getPermalink('/services/web-design'),
+        },
+        {
           text: 'Drupal Development',
           href: getPermalink('/services/drupal-development'),
         },
@@ -35,12 +39,8 @@ export const headerData = {
           text: 'E-commerce',
           href: getPermalink('/services/e-commerce'),
         },
-        {
-          text: 'UI/UX Design',
-          href: getPermalink('/services/ui-ux-design'),
-        },
         // {
-        //   text: 'Branding',
+          //   text: 'Branding',
         //   href: getPermalink('/services/branding'),
         // },
       ],
@@ -75,7 +75,7 @@ export const headerData = {
       ],
     },
     {
-      text: 'AI automations',
+      text: 'AI Technology',
       links: [
         {
           text: 'Operations',
