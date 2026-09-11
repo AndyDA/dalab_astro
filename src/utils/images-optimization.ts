@@ -297,6 +297,22 @@ export async function getImagesOptimized(
   width = (width && Number(width)) || undefined;
   height = (height && Number(height)) || undefined;
 
+  // For external URLs, try to extract width from the URL's `w` parameter and infer aspect ratio
+  if (!width && !height && typeof image === 'string') {
+    try {
+      const url = new URL(image);
+      const wParam = url.searchParams.get('w');
+      if (wParam) {
+        width = Number(wParam) || undefined;
+        if (width) {
+          height = Math.round(width * 0.6667);
+        }
+      }
+    } catch {
+      /* not a valid URL */
+    }
+  }
+
   widths ||= config.deviceSizes;
   sizes ||= getSizes(Number(width) || undefined, layout);
   aspectRatio = parseAspectRatio(aspectRatio);
