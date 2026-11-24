@@ -1,0 +1,142 @@
+---
+// Renders a static page from a JSON `widgets` array. Each entry's `type` maps
+// to a widget component; the remaining keys are passed straight through as
+// props (widgets accept title/subtitle/content/bg as HTML strings, so the JSON
+// can hold the same values the hand-written page used to). Used both for the
+// published page (data imported from JSON) and for the visual-editor island
+// re-render (data from Tina), so both stay in sync.
+import Hero from '~/components/widgets/Hero.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Content from '~/components/widgets/Content.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Team from '~/components/widgets/Team.astro';
+import Timeline from '~/components/widgets/Timeline.astro';
+import Projects from '~/components/widgets/Projects.astro';
+import Pricing from '~/components/widgets/Pricing.astro';
+import Comparison from '~/components/widgets/Comparison.astro';
+import Bento from '~/components/widgets/Bento.astro';
+import Integrations from '~/components/widgets/Integrations.astro';
+import Brands from '~/components/widgets/Brands.astro';
+import Video from '~/components/widgets/Video.astro';
+import Countdown from '~/components/widgets/Countdown.astro';
+import SocialProof from '~/components/widgets/SocialProof.astro';
+import Quote from '~/components/widgets/Quote.astro';
+import Gallery from '~/components/widgets/Gallery.astro';
+import FeatureTabs from '~/components/widgets/FeatureTabs.astro';
+import Newsletter from '~/components/widgets/Newsletter.astro';
+import StickyCTA from '~/components/widgets/StickyCTA.astro';
+import Contact from '~/components/widgets/Contact.astro';
+import Header from '~/components/widgets/Header.astro';
+import Announcement from '~/components/widgets/Announcement.astro';
+import { tinaField } from '@tinacms/astro/tina-field';
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const componentMap: Record<string, any> = {
+  hero: Hero,
+  hero2: Hero2,
+  heroText: HeroText,
+  note: Note,
+  features: Features,
+  features2: Features2,
+  features3: Features3,
+  content: Content,
+  blogLatestPosts: BlogLatestPosts,
+  faqs: FAQs,
+  stats: Stats,
+  callToAction: CallToAction,
+  testimonials: Testimonials,
+  steps: Steps,
+  steps2: Steps2,
+  team: Team,
+  timeline: Timeline,
+  projects: Projects,
+  pricing: Pricing,
+  prices: Pricing,
+  comparison: Comparison,
+  bento: Bento,
+  integrations: Integrations,
+  brands: Brands,
+  video: Video,
+  countdown: Countdown,
+  socialProof: SocialProof,
+  quote: Quote,
+  gallery: Gallery,
+  featureTabs: FeatureTabs,
+  newsletter: Newsletter,
+  stickyCTA: StickyCTA,
+  contact: Contact,
+  header: Header,
+  announcement: Announcement,
+};
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+interface Props {
+  widgets?: Array<Record<string, any>> | null;
+}
+const { widgets = [] } = Astro.props;
+
+// Tina (and thus the overlay data) returns explicit `null` for every unset
+// optional field. Widget components rely on destructuring defaults, which only
+// kick in for `undefined`, so a `null` would override them (e.g. `aspect: null`
+// crashes Content's image crop, `items: null` breaks `.length`). Strip nullish
+// keys recursively so the widget defaults apply, and drop null array entries.
+// An object whose every field was nullish (e.g. `image: { src: null, alt: null }`)
+// would otherwise survive as a truthy `{}`, so collapse it away too.
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const EMPTY = Symbol('empty');
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const clean = (value: any): any => {
+  if (Array.isArray(value)) {
+    return value.filter((v) => v != null).map(clean).filter((v) => v !== EMPTY);
+  }
+  if (value && typeof value === 'object') {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const out: Record<string, any> = {};
+    let hasKeys = false;
+    for (const [key, val] of Object.entries(value)) {
+      if (val === null || val === undefined) continue;
+      const cleaned = clean(val);
+      if (cleaned === EMPTY) continue;
+      out[key] = cleaned;
+      hasKeys = true;
+    }
+    return hasKeys ? out : EMPTY;
+  }
+  return value;
+};
+
+const safeWidgets = (widgets ?? []).filter(
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  (w): w is Record<string, any> => Boolean(w && w.type)
+);
+
+// A single `data-tina-field` marker lets the visual editor associate the page
+// form with this region (it maps to the first widget's `title`).
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const marker =
+  safeWidgets[0] && (safeWidgets[0] as any)._content_source
+    ? tinaField(safeWidgets[0] as any, 'title')
+    : undefined;
+---
+
+<div data-tina-field={marker}>
+  {
+    safeWidgets.map((widget) => {
+      const Comp = componentMap[widget.type];
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const { type, ...props } = clean(widget);
+      return Comp ? <Comp {...props} /> : null;
+    })
+  }
+</div>

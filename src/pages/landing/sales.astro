@@ -1,0 +1,38 @@
+---
+import Layout from '~/layouts/LandingLayout.astro';
+import TinaIsland from '@tinacms/astro/TinaIsland.astro';
+import PageRenderer from '~/components/tina/PageRenderer.astro';
+import { islands } from '~/lib/tina/islands';
+
+import pageJson from '~/data/pages/landing/sales.json';
+import { getPage } from '~/lib/tina/data';
+
+const pageJsonData = pageJson as {
+  title?: string;
+  metadataTitle?: string;
+  widgets?: Array<Record<string, any>> | null;
+};
+
+const pageResult = await getPage('landing/sales.json').catch(() => null);
+const tinaData = pageResult?.data?.page ?? null;
+const page = tinaData ?? pageJsonData;
+
+const metadata = {
+  title: page.metadataTitle ?? 'Long-Form Sales Landing Page Example & Guide',
+  description:
+    'A complete long-form sales landing page built with AstroWind: problem, solution, benefits, proof, offer, guarantee and FAQ, with notes on why each block sells. Free Astro template.',
+  openGraph: { type: 'website' },
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <TinaIsland
+    name="page"
+    wrapper={islands.page.wrapper}
+    params={{ relativePath: 'landing/sales.json' }}
+    primary
+  >
+    <PageRenderer widgets={page.widgets as Array<Record<string, any>> | null} />
+  </TinaIsland>
+</Layout>

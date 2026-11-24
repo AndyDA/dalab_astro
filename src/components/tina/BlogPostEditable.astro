@@ -1,0 +1,44 @@
+---
+// Visual-editing island for blog posts. The `/tina-island/blogPost` endpoint
+// renders this on every store update and the bridge swaps it into the page, so
+// it must reproduce the published layout (it reuses SinglePost) while sourcing
+// content from Tina rich-text.
+import SinglePost from '~/components/blog/SinglePost.astro';
+import { cleanSlug } from '~/utils/permalinks';
+import type { Post } from '~/types';
+import type { BlogPostQuery } from '../../../tina/__generated__/types';
+
+type BlogDoc = BlogPostQuery['blogPost'];
+
+interface Props {
+  data?: BlogDoc | null;
+}
+const { data } = Astro.props;
+
+const fileName = data?._sys?.filename ?? '';
+const toPost = (d: BlogDoc): Post => ({
+  id: d._sys.filename,
+  slug: fileName,
+  permalink: '/' + fileName,
+  publishDate: d.publishDate ? new Date(d.publishDate) : new Date(),
+  updateDate: d.updateDate ? new Date(d.updateDate) : undefined,
+  title: d.title,
+  excerpt: d.excerpt ?? '',
+  image: d.image ?? undefined,
+  imageAlt: d.imageAlt ?? undefined,
+  category: d.category ? { slug: cleanSlug(d.category), title: d.category } : undefined,
+  tags: (d.tags ?? [])
+    .filter((t): t is string => Boolean(t))
+    .map((t) => ({ slug: cleanSlug(t), title: t })),
+  author: d.author ?? undefined,
+  draft: d.draft ?? false,
+  metadata: (d.metadata as Post['metadata']) ?? undefined,
+  readingTime: undefined,
+});
+---
+
+{
+  data && (
+    <SinglePost post={toPost(data)} url={'#'} tinaData={data} bodyFromTina={true} />
+  )
+}

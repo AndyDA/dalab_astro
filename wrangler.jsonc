@@ -1,0 +1,11 @@
+// Cloudflare Workers configuration. The TinaCMS visual-editing endpoint
+// (/tina-island/*) runs on demand inside the Worker, so `nodejs_compat` must be
+// enabled (it provides node:async_hooks, which the island route relies on).
+// The adapter (selected in astro.config.ts when WORKERS_CI / CF_PAGES is set)
+// fills in the worker entrypoint and static-asset bindings automatically.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "astrowind",
+  "compatibility_date": "2026-09-01",
+  "compatibility_flags": ["nodejs_compat"],
+}

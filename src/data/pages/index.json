@@ -1,0 +1,267 @@
+{
+  "title": "Home",
+  "metadataTitle": "DALAB — Design. Code. Impress.",
+  "widgets": [
+    {
+      "type": "hero",
+      "title": "Simple. Fast. Built to perform.",
+      "subtitle": "<span class=\"hidden sm:inline\"> Forget the template. Build something that's actually yours.!! </span> <span class=\"block mb-1 sm:hidden font-bold text-blue-600\">DALAB Agency: Design. Code. Impress.</span> We bring together strategy, design, and tech to create digital experiences that actually work.",
+      "actions": [
+        {
+          "variant": "primary",
+          "text": "Book a Call",
+          "href": "https://cal.com/dalab",
+          "target": "_blank",
+          "icon": "tabler:brand-hipchat"
+        },
+        { "text": "Learn more", "href": "#features" }
+      ],
+      "image": { "src": "/images/world-map.svg", "alt": "DALAB Hero Image" }
+    },
+    {
+      "type": "note",
+      "title": "Philosophy:",
+      "description": "Simplicity, Best Practices and High Performance"
+    },
+    {
+      "type": "features",
+      "id": "features",
+      "tagline": "Our Expertise",
+      "title": "Comprehensive Web Development Solutions",
+      "subtitle": "We leverage cutting-edge technologies and industry best practices to deliver high-quality web solutions tailored to your unique needs.",
+      "items": [
+        {
+          "title": "Modern Technology Stack",
+          "description": "We utilize the latest frameworks like Astro and Tailwind CSS to ensure high performance, scalability, and maintainability.",
+          "icon": "tabler:brand-tailwind"
+        },
+        {
+          "title": "Custom Web Application Development",
+          "description": "From concept to deployment, we build robust and user-friendly web applications that meet your specific business objectives.",
+          "icon": "tabler:components"
+        },
+        {
+          "title": "Responsive Web Design",
+          "description": "We ensure your website looks and functions flawlessly across all devices, providing an optimal user experience for everyone.",
+          "icon": "tabler:list-check"
+        },
+        {
+          "title": "E-commerce Solutions",
+          "description": "We create powerful e-commerce platforms with secure payment gateways and intuitive interfaces to help you sell online effectively.",
+          "icon": "tabler:rocket"
+        },
+        {
+          "title": "Search Engine Optimization (SEO)",
+          "description": "We implement proven SEO strategies to improve your website's visibility in search results and drive organic traffic, boosting your online presence.",
+          "icon": "tabler:arrows-right-left"
+        },
+        {
+          "title": "Website Maintenance & Support",
+          "description": "We provide ongoing maintenance and support services to ensure your website remains up-to-date, secure, and performs optimally.",
+          "icon": "tabler:bulb"
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "isReversed": true,
+      "tagline": "Industry Solutions",
+      "title": "We manage your IT, so you can manage your business.",
+      "items": [
+        {
+          "title": "Order Type Option in POS",
+          "description": "Select order type (e.g., dine-in, takeout, delivery) in POS for accurate order processing and management."
+        },
+        {
+          "title": "Kitchen Display System(KDS) / KOT",
+          "description": "Chefs can view orders in real-time, ensuring efficient kitchen operations and timely food preparation."
+        },
+        {
+          "title": "Order Status Screen(OSS)",
+          "description": "Customers can track the status of their orders in real-time, enhancing transparency and communication."
+        }
+      ],
+      "image": { "src": "/images/food-serv.png", "alt": "Restaurant & Food Delivery Image" },
+      "content": "<h3 class=\"text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2\">Restaurant &amp; Food Delivery</h3>Cutting-edge food delivery app and restaurant management system designed to support both single and multi-branch restaurants.",
+      "bg": "<div class=\"absolute inset-0 bg-blue-50 dark:bg-transparent\"></div>"
+    },
+    {
+      "type": "content",
+      "isAfterContent": true,
+      "items": [
+        {
+          "title": "High level of customization",
+          "description": "Tailor the template effortlessly to match your brand's identity and requirements, making your website distinct and saving you time."
+        },
+        {
+          "title": "Multiple layout possibilities",
+          "description": "Explore various layout options to find the structure that best presents your content, enhancing user engagement and navigation."
+        },
+        {
+          "title": "Fully responsive design",
+          "description": "Ensure your website's optimal performance on various devices and screen sizes, providing a consistent and enjoyable user experience."
+        }
+      ],
+      "image": { "src": "/images/hotel-serv.png", "alt": "Resort & Hotel Booking Image" },
+      "content": "<h3 class=\"text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2\">Resort &amp; Hotel Booking</h3>Ensure your online presence truly represents you.",
+      "bg": "<div class=\"absolute inset-0 bg-blue-50 dark:bg-transparent\"></div>"
+    },
+    {
+      "type": "content",
+      "isReversed": true,
+      "isAfterContent": true,
+      "items": [
+        {
+          "title": "Enhanced user engagement",
+          "description": "Captivate your audience with interactive elements, intuitive navigation, and visually appealing layouts, encouraging longer visits."
+        },
+        {
+          "title": "Continuous improvement",
+          "description": "Ensure your website stays aligned with the latest trends and technologies through regular updates and enhancements."
+        },
+        {
+          "title": "Time and resource efficiency",
+          "description": "Skip the time-consuming process of building a website from scratch and launch your online presence sooner with AstroWind."
+        }
+      ],
+      "image": { "src": "/images/cargo-serv.jpg", "alt": "Astronauts Image" },
+      "content": "<h3 class=\"text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2\">Logistics, Cargo &amp; Transportation</h3>Designed to foster growth and success.",
+      "bg": "<div class=\"absolute inset-0 bg-blue-50 dark:bg-transparent\"></div>"
+    },
+    {
+      "type": "content",
+      "isAfterContent": true,
+      "items": [
+        {
+          "title": "High level of customization",
+          "description": "Tailor the template effortlessly to match your brand's identity and requirements, making your website distinct and saving you time."
+        },
+        {
+          "title": "Multiple layout possibilities",
+          "description": "Explore various layout options to find the structure that best presents your content, enhancing user engagement and navigation."
+        },
+        {
+          "title": "Fully responsive design",
+          "description": "Ensure your website's optimal performance on various devices and screen sizes, providing a consistent and enjoyable user experience."
+        }
+      ],
+      "image": { "src": "/images/charity-serv.png", "alt": "Blueprint Image" },
+      "content": "<h3 class=\"text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2\">Nonprofit &amp; Charity</h3>Ensure your online presence truly represents you.",
+      "bg": "<div class=\"absolute inset-0 bg-blue-50 dark:bg-transparent\"></div>"
+    },
+    {
+      "type": "features2",
+      "tagline": "AI integrations",
+      "title": "Automate any workflow with AI",
+      "subtitle": "Discover how AI can transform your marketing, sales, and operations workflows.",
+      "bg": "<div class=\"absolute inset-0 bg-blue-50 dark:bg-transparent\"></div>",
+      "items": [
+        {
+          "title": "Automate Personalized Sales Outreach with AI",
+          "description": "Automatically generate and send personalized outreach emails to prospects using Salesforce data and AI.",
+          "icon": "flat-color-icons:template"
+        },
+        {
+          "title": "Automate AI Content Creation and Publishing",
+          "description": "Generate, review, and publish content across platforms using AI and collaborative tools.",
+          "icon": "flat-color-icons:gallery"
+        },
+        {
+          "title": "Automate AI-Powered Email Marketing Campaigns",
+          "description": "Automatically generate and send personalized email campaigns using AI for content creation and recipient engagement tracking.",
+          "icon": "flat-color-icons:approval"
+        },
+        {
+          "title": "Automate Personalized Sales Outreach with AI",
+          "description": "Automatically generate and send personalized outreach emails to prospects using Salesforce data and AI.",
+          "icon": "flat-color-icons:document"
+        },
+        {
+          "title": "Optimize Sales Pipeline with AI Insights",
+          "description": "Enhance your sales processes with AI-powered opportunity analysis and automated follow-ups.",
+          "icon": "flat-color-icons:advertising"
+        },
+        {
+          "title": "Automate Customer Onboarding Process",
+          "description": "Streamline customer onboarding with automated communications, resources, and support channels.",
+          "icon": "flat-color-icons:currency-exchange"
+        },
+        {
+          "title": "Automate Product Launch Campaigns with AI",
+          "description": "Coordinate product launches by generating marketing materials and automating multi-channel promotions.",
+          "icon": "flat-color-icons:voice-presentation"
+        },
+        {
+          "title": "Automate Product Feedback Collection and Analysis",
+          "description": "Gather user feedback and analyze it for product improvement using AI.",
+          "icon": "flat-color-icons:business-contact"
+        },
+        {
+          "title": "Optimize Social Media Engagement with AI",
+          "description": "Automate monitoring and responding to social media interactions to boost engagement.",
+          "icon": "flat-color-icons:database"
+        }
+      ]
+    },
+    {
+      "type": "blogLatestPosts",
+      "title": "Find out more content in our Blog",
+      "information": "Tips, trends, and behind-the-scenes looks at what makes digital projects succeed. Real talk about design, development, SEO, and growing your business online—free knowledge straight from our team, with new posts every week."
+    },
+    {
+      "type": "faqs",
+      "tagline": "FAQ",
+      "title": "All your branding, marketing and web design questions–answered.",
+      "subtitle": "Digital strategy shouldn't feel like guesswork. We're here to bring clarity to the process and help you make informed choices with confidence. If your question isn't answered below, don't hesitate to reach out—we're always available to help.",
+      "items": [
+        {
+          "title": "Why DALAB Agency?",
+          "description": "Forget everything you know about agencies. We're built differently—combining enterprise-level impact with boutique flexibility. You get custom, data-backed strategies and direct access to the people doing the work. Zero red tape, zero filler. Just outcomes that matter."
+        },
+        {
+          "title": "What is the cost range for your services?",
+          "description": "Your investment matches your ambition. We build custom quotes based on what you actually need—whether that's a standout website, search visibility, or comprehensive marketing. You'll know exactly what you're paying for and why."
+        },
+        {
+          "title": "What industries do you work with?",
+          "description": "We work across various sectors including e-commerce, professional services, SaaS, healthcare, finance, and hospitality. Our approach is adaptable—we focus on understanding your unique market rather than applying generic templates."
+        },
+        {
+          "title": "What services do you offer?",
+          "description": "Custom web design and development, SEO and search marketing, brand strategy, content creation, UX/UI design, e-commerce solutions, and ongoing digital marketing. We can handle single projects or become your full digital team."
+        },
+        {
+          "title": "How long does a typical project take?",
+          "description": "It depends on scope. A custom website typically takes 6-12 weeks. SEO campaigns show initial results in 3-6 months. We'll give you realistic timelines during our discovery phase—no overpromising."
+        },
+        {
+          "title": "What's your design and development process?",
+          "description": "Discovery and strategy → wireframing and prototyping → design concepts → development → testing → launch → optimization. You're involved at key milestones, with regular check-ins to ensure we're aligned."
+        }
+      ]
+    },
+    {
+      "type": "stats",
+      "stats": [
+        { "title": "Projects Delivered", "amount": "270+" },
+        { "title": "Years in Business", "amount": "9+" },
+        { "title": "Industries Served", "amount": "27+" },
+        { "title": "Brands Transformed", "amount": "58+" }
+      ]
+    },
+    {
+      "type": "callToAction",
+      "actions": [
+        {
+          "variant": "primary",
+          "text": "Let's Talk",
+          "href": "https://cal.com/dalab",
+          "target": "_blank",
+          "icon": "tabler:brand-hipchat"
+        }
+      ],
+      "title": "We are ready – When You Are",
+      "subtitle": "Tell us what you're thinking. We'll help you make it real."
+    }
+  ]
+}

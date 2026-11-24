@@ -1,0 +1,40 @@
+---
+// Visual-editing island for portfolio items. Re-renders the published layout
+// (reusing the port SinglePost) from Tina rich-text on every store update.
+import SinglePost from '~/components/port/SinglePost.astro';
+import { cleanSlug } from '~/utils/permalinks';
+import type { Portfolio } from '~/types';
+import type { PortfolioItemQuery } from '../../../tina/__generated__/types';
+
+interface Props {
+  data?: PortfolioItemQuery['portfolioItem'] | null;
+}
+const { data } = Astro.props;
+
+const fileName = data?._sys?.filename ?? '';
+const toPortfolio = (d: PortfolioItemQuery['portfolioItem']): Portfolio => ({
+  id: d._sys.filename,
+  slug: fileName,
+  permalink: '/portfolio/' + (d.category ? cleanSlug(d.category) + '/' : '') + fileName,
+  publishDate: d.publishDate ? new Date(d.publishDate) : new Date(),
+  updateDate: d.updateDate ? new Date(d.updateDate) : undefined,
+  title: d.title,
+  excerpt: d.excerpt ?? '',
+  image: d.image ?? undefined,
+  imageAlt: d.imageAlt ?? undefined,
+  category: d.category ?? undefined,
+  tags: (d.tags ?? []).filter((t): t is string => Boolean(t)),
+  client: d.client ?? undefined,
+  projectUrl: d.projectUrl ?? undefined,
+  technologies: (d.technologies ?? []).filter((t): t is string => Boolean(t)),
+  featured: d.featured ?? false,
+  metadata: (d.metadata as Portfolio['metadata']) ?? undefined,
+  draft: d.draft ?? false,
+});
+---
+
+{
+  data && (
+    <SinglePost post={toPortfolio(data)} url={'#'} tinaData={data} bodyFromTina={true} />
+  )
+}

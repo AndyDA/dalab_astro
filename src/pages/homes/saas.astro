@@ -1,0 +1,37 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import TinaIsland from '@tinacms/astro/TinaIsland.astro';
+import PageRenderer from '~/components/tina/PageRenderer.astro';
+import { islands } from '~/lib/tina/islands';
+
+import pageJson from '~/data/pages/homes/saas.json';
+import { getPage } from '~/lib/tina/data';
+
+// Canonical source, used as fallback when Tina is unavailable (e.g. a plain
+// static build with no GraphQL server running).
+const pageJsonData = pageJson as {
+  title?: string;
+  metadataTitle?: string;
+  widgets?: Array<Record<string, any>> | null;
+};
+
+// Visual editing: fetch the Tina record so the bridge can seed the form and the
+// editable regions get `data-tina-field` markers. Falls back to the imported
+// JSON when Tina isn't reachable, so normal visitors always get the page.
+const pageResult = await getPage('homes/saas.json').catch(() => null);
+const tinaData = pageResult?.data?.page ?? null;
+const page = tinaData ?? pageJsonData;
+
+const metadata = {
+  title: page.metadataTitle ?? 'SaaS Landing Page',
+  description:
+    'SaaS homepage demo built with AstroWind: product hero, features, pricing plans, FAQs and onboarding steps for a software product.',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <TinaIsland name="page" wrapper={islands.page.wrapper} params={{ relativePath: 'homes/saas.json' }} primary>
+    <PageRenderer widgets={page.widgets as Array<Record<string, any>> | null} />
+  </TinaIsland>
+</Layout>
