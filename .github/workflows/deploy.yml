@@ -1,0 +1,69 @@
+name: Deploy to GitHub Pages
+
+# Publishes the static build (including the TinaCMS admin at /admin/) to GitHub
+# Pages. Unlike actions.yaml (CI only), this runs the *production* build
+# (`npm run build` = `tinacms build --content=local`), which bakes the site into
+# TinaCloud-backed mode so /admin can authenticate against TinaCloud.
+#
+# Required repo secret:
+#   TINA_TOKEN  – from the TinaCloud dashboard (Settings -> Tokens).
+# The public client id below is safe to commit (it ships in the client bundle).
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment, don't cancel an in-progress run.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    env:
+      PUBLIC_TINA_CLIENT_ID: 5bec161b-af9f-4fb9-986f-7a822c92bf4a
+      TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build site
+        run: npm run build
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # The Node adapter emits the prerendered static site to dist/client.
+          path: dist/client
+
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
