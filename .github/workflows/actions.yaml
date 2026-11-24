@@ -30,6 +30,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Generate Tina types
+        run: npm run tina:generate
+
       - name: Run checks
         run: npm run check
 
