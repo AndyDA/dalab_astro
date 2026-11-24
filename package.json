@@ -31,7 +31,6 @@
     "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.6",
     "@astrojs/vercel": "^11.0.22",
-    "@esbuild/win32-x64": "^0.28.2",
     "@tinacms/astro": "^0.8.0",
     "astro": "^7.4.13",
     "astro-icon": "^1.1.5",
@@ -40,6 +39,9 @@
     "lodash.merge": "^4.6.2",
     "tinacms": "^3.15.2",
     "unpic": "^4.2.2"
+  },
+  "optionalDependencies": {
+    "@esbuild/win32-x64": "^0.28.2"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.12",

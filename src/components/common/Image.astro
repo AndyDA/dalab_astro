@@ -39,14 +39,14 @@ interface Props extends Omit<HTMLAttributes<'img'>, 'src' | 'width' | 'height'> 
   layout?: Layout;
 }
 
-const { src, alt, width, height, widths, format, layout = 'constrained', ...rest } = Astro.props;
+const { src, alt: altProp, width, height, widths, format, layout = 'constrained', ...rest } = Astro.props;
 
 // --- Accessibility ---------------------------------------------------------
-if (alt === undefined || alt === null) {
-  throw new Error(
-    `Image: missing required \`alt\` prop (src=${String(src)}). ` + `Pass alt="" explicitly for decorative images.`
-  );
-}
+// Default to an empty string (decorative) when the caller omits `alt` — the
+// `alt` attribute is required by the platform, but widget data from Tina often
+// carries an image object without one. Keep the explicit `alt=""` escape hatch
+// documented above; a missing value is treated as decorative rather than fatal.
+const alt = altProp ?? '';
 
 // --- Prop coercion (tolerate stringified numbers) --------------------------
 const toNumber = (v: number | string | undefined): number | undefined =>

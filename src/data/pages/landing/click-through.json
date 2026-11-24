@@ -138,53 +138,32 @@
       "rows": [
         {
           "label": "Destinations",
-          "values": [
-            "1",
-            "As many as needed"
-          ]
+          "values": ["1", "As many as needed"]
         },
         {
           "label": "Form fields",
-          "values": [
-            "0",
-            "The signup or checkout"
-          ]
+          "values": ["0", "The signup or checkout"]
         },
         {
           "label": "Buttons",
           "description": "Same label, same URL",
-          "values": [
-            "3",
-            "Depends on the page"
-          ]
+          "values": ["3", "Depends on the page"]
         },
         {
           "label": "Proof",
-          "values": [
-            "One or two quotes",
-            "Case studies, reviews, numbers"
-          ]
+          "values": ["One or two quotes", "Case studies, reviews, numbers"]
         },
         {
           "label": "Pricing",
-          "values": [
-            "false",
-            "true"
-          ]
+          "values": ["false", "true"]
         },
         {
           "label": "Full feature list",
-          "values": [
-            "false",
-            "true"
-          ]
+          "values": ["false", "true"]
         },
         {
           "label": "Screens before the first button",
-          "values": [
-            "0",
-            "Not a concern"
-          ]
+          "values": ["0", "Not a concern"]
         }
       ],
       "comparisonColumns": [

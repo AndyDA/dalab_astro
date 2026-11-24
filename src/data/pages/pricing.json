@@ -123,93 +123,53 @@
         {
           "group": "Core",
           "label": "Pages",
-          "values": [
-            "Unlimited",
-            "Unlimited",
-            "Unlimited"
-          ]
+          "values": ["Unlimited", "Unlimited", "Unlimited"]
         },
         {
           "group": "Core",
           "label": "Projects",
-          "values": [
-            "1",
-            "5",
-            "Unlimited"
-          ]
+          "values": ["1", "5", "Unlimited"]
         },
         {
           "group": "Core",
           "label": "Team members",
-          "values": [
-            "1",
-            "5",
-            "25"
-          ]
+          "values": ["1", "5", "25"]
         },
         {
           "group": "Core",
           "label": "Custom domain",
-          "values": [
-            "true",
-            "true",
-            "true"
-          ]
+          "values": ["true", "true", "true"]
         },
         {
           "group": "Support",
           "label": "Email support",
-          "values": [
-            "true",
-            "true",
-            "true"
-          ]
+          "values": ["true", "true", "true"]
         },
         {
           "group": "Support",
           "label": "Priority support",
           "description": "Response within one business day",
-          "values": [
-            "false",
-            "true",
-            "true"
-          ]
+          "values": ["false", "true", "true"]
         },
         {
           "group": "Support",
           "label": "Dedicated manager",
-          "values": [
-            "false",
-            "false",
-            "true"
-          ]
+          "values": ["false", "false", "true"]
         },
         {
           "group": "Extras",
           "label": "Analytics dashboard",
-          "values": [
-            "false",
-            "true",
-            "true"
-          ]
+          "values": ["false", "true", "true"]
         },
         {
           "group": "Extras",
           "label": "Single sign-on (SSO)",
-          "values": [
-            "false",
-            "false",
-            "true"
-          ]
+          "values": ["false", "false", "true"]
         },
         {
           "group": "Extras",
           "label": "Audit log",
-          "values": [
-            "false",
-            "false",
-            "90 days"
-          ]
+          "values": ["false", "false", "90 days"]
         }
       ],
       "comparisonColumns": [

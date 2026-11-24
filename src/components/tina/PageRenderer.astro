@@ -41,7 +41,6 @@ import Header from '~/components/widgets/Header.astro';
 import Announcement from '~/components/widgets/Announcement.astro';
 import { tinaField } from '@tinacms/astro/tina-field';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const componentMap: Record<string, any> = {
   hero: Hero,
   hero2: Hero2,
@@ -80,7 +79,6 @@ const componentMap: Record<string, any> = {
   announcement: Announcement,
 };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 interface Props {
   widgets?: Array<Record<string, any>> | null;
 }
@@ -93,15 +91,17 @@ const { widgets = [] } = Astro.props;
 // keys recursively so the widget defaults apply, and drop null array entries.
 // An object whose every field was nullish (e.g. `image: { src: null, alt: null }`)
 // would otherwise survive as a truthy `{}`, so collapse it away too.
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+
 const EMPTY = Symbol('empty');
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+
 const clean = (value: any): any => {
   if (Array.isArray(value)) {
-    return value.filter((v) => v != null).map(clean).filter((v) => v !== EMPTY);
+    return value
+      .filter((v) => v != null)
+      .map(clean)
+      .filter((v) => v !== EMPTY);
   }
   if (value && typeof value === 'object') {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const out: Record<string, any> = {};
     let hasKeys = false;
     for (const [key, val] of Object.entries(value)) {
@@ -116,18 +116,13 @@ const clean = (value: any): any => {
   return value;
 };
 
-const safeWidgets = (widgets ?? []).filter(
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  (w): w is Record<string, any> => Boolean(w && w.type)
-);
+const safeWidgets = (widgets ?? []).filter((w): w is Record<string, any> => Boolean(w && w.type));
 
 // A single `data-tina-field` marker lets the visual editor associate the page
 // form with this region (it maps to the first widget's `title`).
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+
 const marker =
-  safeWidgets[0] && (safeWidgets[0] as any)._content_source
-    ? tinaField(safeWidgets[0] as any, 'title')
-    : undefined;
+  safeWidgets[0] && (safeWidgets[0] as any)._content_source ? tinaField(safeWidgets[0] as any, 'title') : undefined;
 ---
 
 <div data-tina-field={marker}>

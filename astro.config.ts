@@ -86,11 +86,7 @@ const serveTinaMediaImages = (): Plugin => {
         if (!req.url || !req.url.startsWith('/images/')) return next();
         const rel = decodeURIComponent(req.url.split('?')[0].slice('/images/'.length));
         const filePath = path.resolve(root, rel);
-        if (
-          !filePath.startsWith(root + path.sep) ||
-          !fs.existsSync(filePath) ||
-          !fs.statSync(filePath).isFile()
-        ) {
+        if (!filePath.startsWith(root + path.sep) || !fs.existsSync(filePath) || !fs.statSync(filePath).isFile()) {
           res.statusCode = 404;
           res.end('Not found');
           return;

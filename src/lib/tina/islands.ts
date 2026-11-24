@@ -1,10 +1,6 @@
 import type { IslandRegistry } from '@tinacms/astro/experimental';
 import type { QueryResult } from '@tinacms/astro/data';
-import type {
-  BlogPostQuery,
-  PageQuery,
-  PortfolioItemQuery,
-} from '../../../tina/__generated__/types';
+import type { BlogPostQuery, PageQuery, PortfolioItemQuery } from '../../../tina/__generated__/types';
 import BlogPostEditable from '../../components/tina/BlogPostEditable.astro';
 import PortfolioEditable from '../../components/tina/PortfolioEditable.astro';
 import PageRenderer from '../../components/tina/PageRenderer.astro';

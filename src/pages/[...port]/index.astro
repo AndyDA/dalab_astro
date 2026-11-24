@@ -56,22 +56,19 @@ const portTinaData = portResult?.data?.portfolioItem ?? null;
 ---
 
 <Layout metadata={metadata}>
-  {portTinaData && relativePath ? (
-    <TinaIsland
-      name="portfolioItem"
-      wrapper={islands.portfolioItem.wrapper}
-      params={{ relativePath }}
-      primary
-    >
-      <SinglePost post={{ ...post, image: image }} url={url} tinaData={portTinaData}>
+  {
+    portTinaData && relativePath ? (
+      <TinaIsland name="portfolioItem" wrapper={islands.portfolioItem.wrapper} params={{ relativePath }} primary>
+        <SinglePost post={{ ...post, image: image }} url={url} tinaData={portTinaData}>
+          {post.Content && <post.Content />}
+        </SinglePost>
+      </TinaIsland>
+    ) : (
+      <SinglePost post={{ ...post, image: image }} url={url}>
         {post.Content && <post.Content />}
       </SinglePost>
-    </TinaIsland>
-  ) : (
-    <SinglePost post={{ ...post, image: image }} url={url}>
-      {post.Content && <post.Content />}
-    </SinglePost>
-  )}
+    )
+  }
   <ToPortLink />
   <RelatedPosts post={post} />
 </Layout>

@@ -110,7 +110,10 @@
           "title": "Language and tooling",
           "description": "TypeScript, ESLint and Prettier configured; npm run check runs all three."
         },
-        { "title": "Content", "description": "Markdown and MDX blog posts with a typed schema; six demo posts included." },
+        {
+          "title": "Content",
+          "description": "Markdown and MDX blog posts with a typed schema; six demo posts included."
+        },
         {
           "title": "Pages",
           "description": "4 home page demos, 6 landing page demos, about, services, pricing, contact, 404, terms and privacy."

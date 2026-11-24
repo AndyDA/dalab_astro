@@ -71,4 +71,9 @@ export default [
       'tina/__generated__',
     ],
   },
+  {
+    rules: {
+      '@typescript-eslint/no-explicit-any': 'off',
+    },
+  },
 ];

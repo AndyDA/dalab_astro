@@ -38,8 +38,7 @@ for (const row of rows) {
 }
 // JSON/Tina stores cell values as strings; "true"/"false" map back to the
 // check/cross icons so the schema can round-trip boolean cells.
-const normalizeValue = (value: unknown) =>
-  value === 'true' ? true : value === 'false' ? false : value;
+const normalizeValue = (value: unknown) => (value === 'true' ? true : value === 'false' ? false : value);
 const hasGroups = groups.some((g) => g.group);
 const hasActions = columns.some((c) => c.callToAction);
 ---

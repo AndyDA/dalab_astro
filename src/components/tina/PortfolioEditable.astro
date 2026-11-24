@@ -33,8 +33,4 @@ const toPortfolio = (d: PortfolioItemQuery['portfolioItem']): Portfolio => ({
 });
 ---
 
-{
-  data && (
-    <SinglePost post={toPortfolio(data)} url={'#'} tinaData={data} bodyFromTina={true} />
-  )
-}
+{data && <SinglePost post={toPortfolio(data)} url={'#'} tinaData={data} bodyFromTina={true} />}

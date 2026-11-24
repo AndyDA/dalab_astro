@@ -104,17 +104,19 @@ const blogTinaData = !blogResult ? null : blogResult.data?.blogPost;
 <Layout metadata={metadata}>
   <StructuredData slot="head" schema={articleSchema} />
   <Breadcrumbs bar hideCurrent items={breadcrumbs} />
-  {blogTinaData && relativePath ? (
-    <TinaIsland name="blogPost" wrapper={islands.blogPost.wrapper} params={{ relativePath }} primary>
-      <SinglePost post={{ ...post, image: image }} url={url} tinaData={blogTinaData}>
+  {
+    blogTinaData && relativePath ? (
+      <TinaIsland name="blogPost" wrapper={islands.blogPost.wrapper} params={{ relativePath }} primary>
+        <SinglePost post={{ ...post, image: image }} url={url} tinaData={blogTinaData}>
+          {post.Content && <post.Content />}
+        </SinglePost>
+      </TinaIsland>
+    ) : (
+      <SinglePost post={{ ...post, image: image }} url={url}>
         {post.Content && <post.Content />}
       </SinglePost>
-    </TinaIsland>
-  ) : (
-    <SinglePost post={{ ...post, image: image }} url={url}>
-      {post.Content && <post.Content />}
-    </SinglePost>
-  )}
+    )
+  }
   <ToBlogLink />
   <RelatedPosts post={post} />
 </Layout>

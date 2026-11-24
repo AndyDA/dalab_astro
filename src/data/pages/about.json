@@ -169,9 +169,7 @@
             "alt": "Daniel Okafor"
           },
           "bio": "Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla.",
-          "socials": [
-            { "icon": "tabler:brand-github", "href": "https://github.com/", "ariaLabel": "GitHub" }
-          ]
+          "socials": [{ "icon": "tabler:brand-github", "href": "https://github.com/", "ariaLabel": "GitHub" }]
         },
         {
           "name": "Mei Tanaka",
@@ -181,9 +179,7 @@
             "alt": "Mei Tanaka"
           },
           "bio": "Sed porttitor est nibh at nulla. Cras semper nulla leo, eget laoreet erat.",
-          "socials": [
-            { "icon": "tabler:brand-dribbble", "href": "https://dribbble.com/", "ariaLabel": "Dribbble" }
-          ]
+          "socials": [{ "icon": "tabler:brand-dribbble", "href": "https://dribbble.com/", "ariaLabel": "Dribbble" }]
         },
         {
           "name": "Jonas Weber",
@@ -193,9 +189,7 @@
             "alt": "Jonas Weber"
           },
           "bio": "Praesent faucibus massa in purus iaculis dictum.",
-          "socials": [
-            { "icon": "tabler:brand-linkedin", "href": "https://www.linkedin.com/", "ariaLabel": "LinkedIn" }
-          ]
+          "socials": [{ "icon": "tabler:brand-linkedin", "href": "https://www.linkedin.com/", "ariaLabel": "LinkedIn" }]
         }
       ]
     },

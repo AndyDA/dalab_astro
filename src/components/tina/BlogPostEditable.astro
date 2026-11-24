@@ -27,9 +27,7 @@ const toPost = (d: BlogDoc): Post => ({
   image: d.image ?? undefined,
   imageAlt: d.imageAlt ?? undefined,
   category: d.category ? { slug: cleanSlug(d.category), title: d.category } : undefined,
-  tags: (d.tags ?? [])
-    .filter((t): t is string => Boolean(t))
-    .map((t) => ({ slug: cleanSlug(t), title: t })),
+  tags: (d.tags ?? []).filter((t): t is string => Boolean(t)).map((t) => ({ slug: cleanSlug(t), title: t })),
   author: d.author ?? undefined,
   draft: d.draft ?? false,
   metadata: (d.metadata as Post['metadata']) ?? undefined,
@@ -37,8 +35,4 @@ const toPost = (d: BlogDoc): Post => ({
 });
 ---
 
-{
-  data && (
-    <SinglePost post={toPost(data)} url={'#'} tinaData={data} bodyFromTina={true} />
-  )
-}
+{data && <SinglePost post={toPost(data)} url={'#'} tinaData={data} bodyFromTina={true} />}

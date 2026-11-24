@@ -497,8 +497,14 @@ export default defineConfig({
                     name: 'items',
                     label: 'Included items',
                     list: true,
-                    ui: { itemProps: (item) => ({ label: item?.description ? String(item.description).slice(0, 40) : 'Item' }) },
-                    fields: [{ type: 'string', name: 'description', label: 'Description', ui: { component: 'textarea' } }],
+                    ui: {
+                      itemProps: (item) => ({
+                        label: item?.description ? String(item.description).slice(0, 40) : 'Item',
+                      }),
+                    },
+                    fields: [
+                      { type: 'string', name: 'description', label: 'Description', ui: { component: 'textarea' } },
+                    ],
                   },
                   {
                     type: 'object',
@@ -548,7 +554,12 @@ export default defineConfig({
                   { type: 'string', name: 'group', label: 'Group' },
                   { type: 'string', name: 'label', label: 'Label' },
                   { type: 'string', name: 'description', label: 'Description', ui: { component: 'textarea' } },
-                  { type: 'string', name: 'values', label: 'Values (one per column: "true", "false" or text)', list: true },
+                  {
+                    type: 'string',
+                    name: 'values',
+                    label: 'Values (one per column: "true", "false" or text)',
+                    list: true,
+                  },
                 ],
               },
               { type: 'string', name: 'firstColumnLabel', label: 'First column label' },
@@ -578,7 +589,9 @@ export default defineConfig({
                 name: 'images',
                 label: 'Images',
                 list: true,
-                ui: { itemProps: (item) => ({ label: item?.alt || item?.src ? String(item?.alt || item?.src) : 'Image' }) },
+                ui: {
+                  itemProps: (item) => ({ label: item?.alt || item?.src ? String(item?.alt || item?.src) : 'Image' }),
+                },
                 fields: [
                   { type: 'string', name: 'src', label: 'Source' },
                   { type: 'string', name: 'alt', label: 'Alt text' },
