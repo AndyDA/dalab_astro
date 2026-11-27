@@ -5,3 +5,6 @@ node_modules
 public/admin
 tina/__generated__
 tina/tina-lock.json
+# Obsidian/Vault CMS configs are managed by the app, not hand-formatted
+.obsidian
+_bases

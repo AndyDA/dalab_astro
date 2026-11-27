@@ -19,7 +19,11 @@ import type { AstroIntegration } from 'astro';
 
 import astrowind from './vendor/integration';
 
-import { readingTimeRemarkPlugin, resolveAttachmentsRemarkPlugin, responsiveTablesRehypePlugin } from './src/utils/frontmatter';
+import {
+  readingTimeRemarkPlugin,
+  resolveAttachmentsRemarkPlugin,
+  responsiveTablesRehypePlugin,
+} from './src/utils/frontmatter';
 import { injectDarkMode } from './scripts/tina-darkmode';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));

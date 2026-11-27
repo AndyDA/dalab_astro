@@ -45,7 +45,8 @@ type MdastNode = { type?: string; url?: string; children?: MdastNode[] };
 
 const LOCAL_IMAGE_EXTENSIONS = new Set(['.avif', '.gif', '.jpeg', '.jpg', '.png', '.svg', '.tiff', '.webp']);
 
-const isLocalImage = (url: string) => LOCAL_IMAGE_EXTENSIONS.has(path.extname(url.split('#')[0].split('?')[0]).toLowerCase());
+const isLocalImage = (url: string) =>
+  LOCAL_IMAGE_EXTENSIONS.has(path.extname(url.split('#')[0].split('?')[0]).toLowerCase());
 
 /**
  * Resolve Obsidian/Vault CMS relative image paths to a `~/…` path so Astro's

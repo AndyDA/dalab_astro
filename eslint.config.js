@@ -69,6 +69,9 @@ export default [
       '.astro',
       'public/admin',
       'tina/__generated__',
+      // Obsidian/Vault CMS: installed plugin bundles are third-party code
+      '.obsidian',
+      '_bases',
     ],
   },
   {
