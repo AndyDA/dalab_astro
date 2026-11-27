@@ -8,6 +8,13 @@ name: Deploy to GitHub Pages
 # Required repo secret:
 #   TINA_TOKEN  – from the TinaCloud dashboard (Settings -> Tokens).
 # The public client id below is safe to commit (it ships in the client bundle).
+#
+# Note for local builds on Windows: if the project path contains a space
+# (e.g. "Dalab Site"), the Tina CLI's GraphQL glob loader misparses the path.
+# Workaround: run the two build steps via the 8.3 short path, e.g.
+#   node node_modules/@tinacms/cli/dist/index.js build --local --skip-cloud-checks --rootPath "D:\Work\Sites\DALABS~1"
+#   TINA_LOCAL_URL=http://localhost:4001/graphql NODE_ENV=production npx astro build
+# (Get the short path with: (New-Object -ComObject Scripting.FileSystemObject).GetFolder('<path>').ShortPath)
 
 on:
   push:

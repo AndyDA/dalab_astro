@@ -3,14 +3,27 @@ import type { ImageMetadata } from 'astro';
 import type { MetaDataOpenGraph } from '~/types';
 
 // Lazy-loaded glob of local images. The glob runs once and is cached.
+// Two sources are merged:
+//   - `~/assets/images/**` — theme + TinaCMS media library
+//   - `~/data/**`          — Obsidian/Vault CMS attachments, which live in an
+//                            `attachments/` subfolder next to the note that
+//                            references them (see `.obsidian/app.json`).
 let _localImages: Record<string, () => Promise<unknown>> | undefined;
 
+// NOTE: `import.meta.glob` only accepts static string literals. A template
+// literal with interpolation is not expanded by Vite and would silently match
+// nothing, so both patterns are written out in full.
 const loadLocalImages = () => {
   if (_localImages) return _localImages;
   try {
-    _localImages = import.meta.glob(
-      '~/assets/images/**/*.{jpeg,jpg,png,tiff,webp,gif,svg,JPEG,JPG,PNG,TIFF,WEBP,GIF,SVG}'
-    );
+    _localImages = {
+      ...import.meta.glob(
+        '~/assets/images/**/*.{jpeg,jpg,png,tiff,webp,gif,svg,avif,JPEG,JPG,PNG,TIFF,WEBP,GIF,SVG,AVIF}'
+      ),
+      ...import.meta.glob(
+        '~/data/**/*.{jpeg,jpg,png,tiff,webp,gif,svg,avif,JPEG,JPG,PNG,TIFF,WEBP,GIF,SVG,AVIF}'
+      ),
+    };
   } catch {
     _localImages = {};
   }
@@ -24,6 +37,7 @@ const loadLocalImages = () => {
  *   - `ImageMetadata`              → returned as-is (already imported)
  *   - `"http(s)://…"` or `"/path"` → returned as-is (external or public/)
  *   - `"~/assets/images/…"`        → resolved to its ImageMetadata via the glob
+ *   - `"~/data/…"`                   → resolved the same way (Obsidian attachments)
  */
 export const findImage = async (
   imagePath?: string | ImageMetadata | null
@@ -38,7 +52,7 @@ export const findImage = async (
     imagePath = `~/assets/images/${imagePath.slice('/images/'.length)}`;
   }
   if (imagePath.startsWith('/')) return imagePath;
-  if (!imagePath.startsWith('~/assets/images')) return imagePath;
+  if (!imagePath.startsWith('~/assets/images') && !imagePath.startsWith('~/data/')) return imagePath;
 
   const images = loadLocalImages();
   const key = imagePath.replace('~/', '/src/');

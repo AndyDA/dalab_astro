@@ -28,3 +28,11 @@ pnpm-workspace.yaml
 .astro
 node_modules
 tina/__generated__
+# Vault CMS / Obsidian — track configs, not installed plugin code or themes
+# (Obsidian re-downloads plugins/themes from the community store on setup).
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/plugins/*/main.js
+.obsidian/plugins/*/styles.css
+.obsidian/themes/
+.ref/
