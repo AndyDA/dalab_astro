@@ -1,0 +1,27 @@
+{
+  "showInlineTitle": false,
+  "promptDelete": true,
+  "showIndentGuide": false,
+  "attachmentFolderPath": "./attachments",
+  "userIgnoreFilters": [
+    "dist/",
+    "node_modules/",
+    ".astro/",
+    ".git/",
+    "vendor/",
+    "_bases/",
+    "node_modules/",
+    "public/",
+    "scripts/",
+    "tina/",
+    "vendor/"
+  ],
+  "focusNewTab": false,
+  "trashOption": "system",
+  "alwaysUpdateLinks": true,
+  "useMarkdownLinks": true,
+  "newFileLocation": "current",
+  "newLinkFormat": "relative",
+  "readableLineLength": true,
+  "defaultViewMode": "source"
+}

@@ -1,0 +1,123 @@
+properties:
+  file.fullname:
+    displayName: Full File Name
+  file.name:
+    displayName: File Name
+  note.publishDate:
+    displayName: Date
+  note.draft:
+    displayName: Draft
+  note.title:
+    displayName: Title
+  note.excerpt:
+    displayName: Excerpt
+  note.category:
+    displayName: Category
+  note.client:
+    displayName: Client
+  note.tags:
+    displayName: Tags
+  file.path:
+    displayName: Path
+views:
+  - type: cms
+    name: Vault CMS Guide
+    filters:
+      and:
+        - file.folder == ""
+        - file.name == "_GUIDE"
+    order: []
+    sort:
+      - property: file.ctime
+        direction: DESC
+    fallbackToEmbeds: never
+    propertyDisplay1: file.fullname
+    showTextPreview: true
+    imageFormat: none
+    showDate: false
+    showDraftStatus: false
+    propertyLabels: above
+    titleProperty: note.title
+    propertyLayout12SideBySide: false
+    propertyLayout34SideBySide: false
+    showTags: false
+    customizeNewButton: false
+    newNoteLocation: ""
+    cardSize: 250
+    imageAspectRatio: 0.55
+    maxTagsToShow: 2
+    dateIncludeTime: false
+    descriptionProperty: note.excerpt
+    hideQuickEditIcon: true
+  - type: cms
+    name: Posts
+    filters:
+      and:
+        - file.folder == "src/data/post"
+    order:
+      - publishDate
+    sort:
+      - property: publishDate
+        direction: DESC
+    fallbackToEmbeds: never
+    imageProperty: note.image
+    propertyDisplay1: note.category
+    propertyDisplay2: note.publishDate
+    propertyDisplay3: file.path
+    showTextPreview: true
+    imageFormat: cover
+    showDate: true
+    showDraftStatus: true
+    dateProperty: note.publishDate
+    draftStatusProperty: note.draft
+    draftStatusUseFilenamePrefix: false
+    tagsProperty: note.tags
+    propertyLabels: above
+    titleProperty: note.title
+    propertyLayout12SideBySide: true
+    propertyLayout34SideBySide: false
+    showTags: true
+    customizeNewButton: true
+    newNoteLocation: src/data/post
+    cardSize: 250
+    imageAspectRatio: 0.55
+    maxTagsToShow: 2
+    dateIncludeTime: false
+    descriptionProperty: note.excerpt
+    hideQuickEditIcon: false
+  - type: cms
+    name: Portfolio
+    filters:
+      and:
+        - file.folder == "src/data/port"
+    order:
+      - file.ctime
+    sort:
+      - property: file.ctime
+        direction: DESC
+    fallbackToEmbeds: never
+    imageProperty: note.image
+    propertyDisplay1: note.category
+    propertyDisplay2: file.path
+    propertyDisplay3: note.client
+    showTextPreview: true
+    imageFormat: cover
+    showDate: true
+    showDraftStatus: true
+    dateProperty: note.publishDate
+    draftStatusProperty: note.draft
+    draftStatusUseFilenamePrefix: false
+    tagsProperty: note.tags
+    propertyLabels: above
+    titleProperty: note.title
+    propertyLayout12SideBySide: true
+    propertyLayout34SideBySide: false
+    showTags: true
+    customizeNewButton: true
+    newNoteLocation: src/data/port
+    cardSize: 250
+    imageAspectRatio: 0.55
+    maxTagsToShow: 2
+    dateIncludeTime: false
+    descriptionProperty: note.excerpt
+    hideQuickEditIcon: false

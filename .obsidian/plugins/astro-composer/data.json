@@ -1,0 +1,59 @@
+{
+  "defaultTemplate": "---\ntitle: \"{{title}}\"\npublishDate: {{date}}\nexcerpt: \"\"\ntags: []\ndraft: true\n---",
+  "autoInsertProperties": true,
+  "dateFormat": "YYYY-MM-DD",
+  "enableCopyHeadingLink": true,
+  "copyHeadingLinkFormat": "astro",
+  "addTrailingSlashToLinks": true,
+  "enableOpenTerminalCommand": true,
+  "terminalProjectRootPath": ".",
+  "terminalApplicationName": "",
+  "enableTerminalDebugLogging": false,
+  "enableTerminalRibbonIcon": true,
+  "enableOpenConfigFileCommand": true,
+  "configFilePath": "astro.config.ts",
+  "enableConfigRibbonIcon": true,
+  "contentTypes": [
+    {
+      "id": "content-type-post",
+      "name": "Post",
+      "folder": "src/data/post",
+      "linkBasePath": "/",
+      "template": "---\ntitle: \"{{title}}\"\npublishDate: {{date}}\nexcerpt: \"\"\ntags: []\ndraft: true\n---",
+      "enabled": true,
+      "creationMode": "file",
+      "indexFileName": "index",
+      "ignoreSubfolders": false,
+      "enableUnderscorePrefix": false,
+      "useMdxExtension": true
+    },
+    {
+      "id": "content-type-port",
+      "name": "Portfolio",
+      "folder": "src/data/port",
+      "linkBasePath": "/portfolio/",
+      "template": "---\ntitle: \"{{title}}\"\npublishDate: {{date}}\nexcerpt: \"\"\ncategory: \"\"\ntags: []\nclient: \"\"\nprojectUrl: \"\"\ntechnologies: []\nfeatured: false\ndraft: true\n---",
+      "enabled": true,
+      "creationMode": "file",
+      "indexFileName": "index",
+      "ignoreSubfolders": false,
+      "enableUnderscorePrefix": false,
+      "useMdxExtension": false
+    }
+  ],
+  "migrationCompleted": true,
+  "helpButtonReplacement": {
+    "enabled": true,
+    "commandId": "astro-composer:edit-astro-config",
+    "iconId": "rocket"
+  },
+  "showMdxFilesInExplorer": true,
+  "processBackgroundFileChanges": true,
+  "syncDraftDate": true,
+  "draftDetectionMode": "property",
+  "draftProperty": "draft",
+  "draftLogic": "true-is-draft",
+  "publishDateField": "publishDate",
+  "updateModifiedDate": false,
+  "modifiedDateField": ""
+}
